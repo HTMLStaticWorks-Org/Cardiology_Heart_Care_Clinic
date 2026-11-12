@@ -1,0 +1,519 @@
+/* ==========================================================================
+   CardioCare Public Pages & Auth Pages Styles
+   ========================================================================== */
+
+/* Hero Section */
+.cc-hero {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(56px, 7vw, 96px);
+  background: linear-gradient(135deg, var(--cc-bg-surface) 0%, var(--cc-bg-page) 58%, var(--cc-teal-soft) 100%);
+}
+
+[data-theme="dark"] .cc-hero {
+  background: linear-gradient(135deg, #121E2A 0%, #162432 58%, #142B34 100%);
+}
+
+.cc-hero-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.45;
+  z-index: 0;
+}
+
+.cc-hero-ecg-bg {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 18px;
+  width: 100%;
+  height: 92px;
+  pointer-events: none;
+  opacity: 0.18;
+  z-index: 1;
+}
+
+.cc-ecg-trace {
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  animation: ccEcgPulse 6s ease-in-out infinite;
+}
+
+@keyframes ccEcgPulse {
+  0% { stroke-dashoffset: 1200; opacity: 0.2; }
+  45% { stroke-dashoffset: 0; opacity: 0.9; }
+  85% { stroke-dashoffset: 0; opacity: 0.5; }
+  100% { stroke-dashoffset: -1200; opacity: 0.2; }
+}
+
+.cc-hero-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.cc-hero-title {
+  font-size: clamp(2.15rem, 4.4vw, 3.45rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.cc-hero-title span {
+  color: var(--cc-burgundy);
+}
+
+[data-theme="dark"] .cc-hero-title span {
+  color: #F08DA3;
+}
+
+.cc-hero-desc {
+  font-size: clamp(1.02rem, 1.4vw, 1.18rem);
+  color: var(--cc-text-secondary);
+  max-width: 560px;
+  margin-bottom: 28px;
+}
+
+.cc-hero-media-frame {
+  position: relative;
+  border-radius: var(--cc-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--cc-shadow-lg);
+  border: 6px solid var(--cc-bg-surface);
+  aspect-ratio: 4 / 3;
+}
+
+.cc-hero-media-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cc-hero-trust-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: var(--cc-radius-sm);
+  background-color: var(--cc-bg-surface);
+  border: 1px solid var(--cc-border);
+  box-shadow: var(--cc-shadow-xs);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--cc-text-primary);
+}
+
+/* Split Welcome Layout */
+.cc-split-img {
+  border-radius: var(--cc-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--cc-shadow-md);
+  aspect-ratio: 4 / 3;
+}
+
+.cc-split-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cc-feature-pill {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: var(--cc-radius-md);
+  background-color: var(--cc-bg-page);
+  border: 1px solid var(--cc-border);
+  height: 100%;
+}
+
+.cc-feature-pill svg {
+  width: 20px;
+  height: 20px;
+  color: var(--cc-teal);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Patient Journey Timeline (Horizontal on Desktop, Vertical on Mobile) */
+.cc-journey-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+  position: relative;
+}
+
+.cc-journey-step {
+  position: relative;
+  background-color: var(--cc-bg-surface);
+  border: 1px solid var(--cc-border);
+  border-radius: var(--cc-radius-md);
+  padding: 24px 18px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  box-shadow: var(--cc-shadow-xs);
+}
+
+.cc-journey-num {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--cc-burgundy), var(--cc-teal));
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 991.98px) {
+  .cc-journey-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding-inline-start: 22px;
+    border-inline-start: 2px dashed var(--cc-teal);
+  }
+  .cc-journey-step {
+    text-align: start;
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 16px;
+  }
+  .cc-journey-num {
+    margin-bottom: 0;
+  }
+}
+
+/* Swiper Customization */
+.cc-swiper-wrap {
+  position: relative;
+  padding-bottom: 44px;
+}
+
+.cc-swiper-wrap .swiper-slide {
+  height: auto;
+  display: flex;
+}
+
+.cc-testimonial-card {
+  background-color: var(--cc-bg-surface);
+  border: 1px solid var(--cc-border);
+  border-radius: var(--cc-radius-md);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  box-shadow: var(--cc-shadow-xs);
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--cc-burgundy) !important;
+}
+
+/* Page Sub-Hero (Services & Doctors) */
+.cc-page-hero {
+  padding-block: clamp(48px, 6vw, 76px);
+  background: linear-gradient(135deg, var(--cc-navy) 0%, #1D3B4D 60%, #165B63 100%);
+  color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+}
+
+[data-theme="dark"] .cc-page-hero {
+  background: linear-gradient(135deg, #0E1924 0%, #15283A 60%, #133A42 100%);
+}
+
+.cc-page-hero h1,
+.cc-page-hero p {
+  color: #FFFFFF;
+}
+
+.cc-page-hero p {
+  opacity: 0.88;
+}
+
+/* Services Page Detailed Alternating Layout */
+.cc-service-detail-card {
+  background-color: var(--cc-bg-surface);
+  border: 1px solid var(--cc-border);
+  border-radius: var(--cc-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--cc-shadow-sm);
+}
+
+.cc-service-detail-img {
+  width: 100%;
+  height: 100%;
+  min-height: 290px;
+  max-height: 380px;
+  object-fit: cover;
+}
+
+.cc-prep-box {
+  background-color: var(--cc-bg-subtle);
+  border-inline-start: 4px solid var(--cc-teal);
+  border-radius: var(--cc-radius-sm);
+  padding: 14px 16px;
+}
+
+/* FAQ Accordion */
+.cc-accordion .accordion-item {
+  background-color: var(--cc-bg-surface);
+  border: 1px solid var(--cc-border);
+  border-radius: var(--cc-radius-md) !important;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.cc-accordion .accordion-button {
+  background-color: var(--cc-bg-surface);
+  color: var(--cc-text-primary);
+  font-weight: 700;
+  padding: 18px 22px;
+  box-shadow: none;
+}
+
+.cc-accordion .accordion-button:not(.collapsed) {
+  background-color: var(--cc-teal-soft);
+  color: var(--cc-teal);
+}
+
+[data-theme="dark"] .cc-accordion .accordion-button::after {
+  filter: invert(1);
+}
+
+.cc-accordion .accordion-body {
+  color: var(--cc-text-secondary);
+  padding: 18px 22px;
+}
+
+/* Doctor Meta List */
+.cc-doc-meta {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.88rem;
+  color: var(--cc-text-secondary);
+}
+
+.cc-doc-meta li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cc-doc-meta svg {
+  width: 16px;
+  height: 16px;
+  color: var(--cc-teal);
+  flex-shrink: 0;
+}
+
+.cc-slot-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  background-color: var(--cc-teal-soft);
+  color: var(--cc-teal);
+  border: 1px solid rgba(22, 140, 145, 0.25);
+}
+
+/* ==========================================================================
+   Auth Pages (Login & Register Split Screen - No Public Header/Footer)
+   ========================================================================== */
+.cc-auth-page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  background-color: var(--cc-bg-page);
+}
+
+.cc-auth-visual {
+  position: relative;
+  background: linear-gradient(155deg, #172B3A 0%, #7B263A 100%);
+  color: #FFFFFF;
+  padding: clamp(28px, 4vw, 56px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.cc-auth-visual-photo {
+  border-radius: var(--cc-radius-lg);
+  overflow: hidden;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  aspect-ratio: 16 / 10;
+  margin-block: 24px;
+  box-shadow: var(--cc-shadow-lg);
+}
+
+.cc-auth-visual-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cc-auth-form-pane {
+  padding: clamp(24px, 4vw, 54px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cc-auth-card {
+  width: 100%;
+  max-width: 520px;
+  background-color: var(--cc-bg-surface);
+  border: 1px solid var(--cc-border);
+  border-radius: var(--cc-radius-lg);
+  padding: clamp(24px, 3.5vw, 38px);
+  box-shadow: var(--cc-shadow-md);
+}
+
+.cc-auth-register-card {
+  max-width: 680px;
+}
+
+.cc-auth-topbar {
+  width: 100%;
+  max-width: 680px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 12px;
+}
+
+@media (max-width: 991.98px) {
+  .cc-auth-page {
+    grid-template-columns: 1fr;
+  }
+  .cc-auth-visual {
+    padding-block: 28px;
+  }
+  .cc-auth-visual-photo {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   HOME 2 — Editorial Clinical Variant Styles
+   ========================================================================== */
+.cc-hero-v2 {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(52px, 6.5vw, 88px);
+  background: radial-gradient(circle at top right, var(--cc-burgundy-soft) 0%, transparent 45%),
+              linear-gradient(160deg, var(--cc-bg-surface) 0%, var(--cc-bg-page) 100%);
+}
+
+[data-theme="dark"] .cc-hero-v2 {
+  background: radial-gradient(circle at top right, rgba(168, 59, 84, 0.2) 0%, transparent 45%),
+              linear-gradient(160deg, #121E2A 0%, #162432 100%);
+}
+
+.cc-quick-booking-bar {
+  background-color: var(--cc-bg-surface);
+  border: 1px solid var(--cc-border-strong);
+  border-radius: var(--cc-radius-md);
+  padding: 16px;
+  box-shadow: var(--cc-shadow-md);
+}
+
+.cc-hero-v2-floating-card {
+  position: relative;
+  margin-top: -36px;
+  margin-inline: 18px;
+  padding: 16px 20px;
+  border-radius: var(--cc-radius-md);
+  background-color: var(--cc-bg-surface);
+  border: 1px solid var(--cc-border);
+  box-shadow: var(--cc-shadow-md);
+  z-index: 3;
+}
+
+.cc-bento-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 991.98px) {
+  .cc-bento-strip {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cc-bento-tile {
+  background-color: var(--cc-bg-surface);
+  border: 1px solid var(--cc-border);
+  border-top: 4px solid var(--cc-teal);
+  border-radius: var(--cc-radius-md);
+  padding: 24px;
+  height: 100%;
+  box-shadow: var(--cc-shadow-xs);
+}
+
+.cc-bento-tile.accent-burgundy {
+  border-top-color: var(--cc-burgundy);
+}
+
+.cc-facility-tab-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: var(--cc-radius-sm);
+  border: 1px solid var(--cc-border);
+  background-color: var(--cc-bg-surface);
+  color: var(--cc-text-primary);
+  font-weight: 600;
+  text-align: start;
+  cursor: pointer;
+  transition: all var(--cc-transition);
+}
+
+.cc-facility-tab-btn:hover {
+  border-color: var(--cc-teal);
+}
+
+.cc-facility-tab-btn.active {
+  background-color: var(--cc-burgundy);
+  border-color: var(--cc-burgundy);
+  color: #FFFFFF;
+}
+
+.cc-facility-preview-card {
+  background-color: var(--cc-bg-surface);
+  border: 1px solid var(--cc-border);
+  border-radius: var(--cc-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--cc-shadow-md);
+  height: 100%;
+}
+
+.cc-facility-preview-img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+

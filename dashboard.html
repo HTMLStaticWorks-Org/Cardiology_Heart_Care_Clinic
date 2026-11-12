@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Dashboard — CardioCare Portal (Demo)</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+<body>
+  <div id="ccDashShell" class="cc-dash-shell">
+    <!-- Backdrop for Mobile Drawer -->
+    <div id="ccDashBackdrop" class="cc-dash-backdrop"></div>
+
+    <!-- Sidebar (Left in LTR, Right in RTL, Mobile Drawer below 1200px) -->
+    <aside id="ccDashSidebar" class="cc-dash-sidebar" aria-label="Patient Portal Sidebar">
+      <div class="cc-dash-sidebar-header">
+        <a href="index.html" class="cc-brand" aria-label="CardioCare Public Home">
+          <svg class="cc-brand-mark" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <rect width="64" height="64" rx="16" fill="#7B263A"/>
+            <path d="M12 34H21L25.5 22L31.5 44L36.5 28L40 34H52" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="cc-brand-text">
+            <span class="cc-brand-name">CardioCare</span>
+            <span class="cc-brand-tag">Patient Portal (Demo)</span>
+          </span>
+        </a>
+        <button type="button" id="ccDashCloseDrawerBtn" class="btn-close d-xl-none" aria-label="Close sidebar"></button>
+      </div>
+
+      <nav class="cc-dash-nav">
+        <button type="button" class="cc-dash-nav-btn active" data-dash-module="overview">
+          <i data-lucide="layout-dashboard"></i><span data-i18n="dash_overview">Overview</span>
+        </button>
+        <button type="button" class="cc-dash-nav-btn" data-dash-module="appointments">
+          <i data-lucide="calendar-days"></i><span data-i18n="dash_appointments">Appointments</span>
+        </button>
+        <button type="button" class="cc-dash-nav-btn" data-dash-module="ecg">
+          <i data-lucide="activity"></i><span data-i18n="dash_ecg">ECG Reports</span>
+        </button>
+        <button type="button" class="cc-dash-nav-btn" data-dash-module="tests">
+          <i data-lucide="file-text"></i><span data-i18n="dash_tests">Test Reports</span>
+        </button>
+        <button type="button" class="cc-dash-nav-btn" data-dash-module="medications">
+          <i data-lucide="pill"></i><span data-i18n="dash_meds">Medication Reminders</span>
+        </button>
+        <button type="button" class="cc-dash-nav-btn" data-dash-module="history">
+          <i data-lucide="clipboard-list"></i><span data-i18n="dash_history">Medical History</span>
+        </button>
+        <button type="button" class="cc-dash-nav-btn" data-dash-module="profile">
+          <i data-lucide="user-cog"></i><span data-i18n="dash_profile">My Profile</span>
+        </button>
+        <button type="button" class="cc-dash-nav-btn" data-dash-module="notifications">
+          <i data-lucide="bell"></i><span data-i18n="dash_notifications">Notifications</span>
+          <span id="sidebarNotifBadge" class="cc-dash-nav-badge">0</span>
+        </button>
+      </nav>
+
+      <div class="cc-dash-sidebar-footer">
+        <button type="button" class="cc-dash-nav-btn text-danger" data-dash-logout>
+          <i data-lucide="log-out"></i><span data-i18n="dash_logout">Logout</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Dashboard Workspace -->
+    <div class="cc-dash-main">
+      <!-- Topbar -->
+      <header class="cc-dash-topbar">
+        <div class="d-flex align-items-center gap-2">
+          <button type="button" id="ccDashDrawerBtn" class="cc-icon-toggle cc-dash-drawer-toggle" aria-label="Open sidebar navigation">
+            <i data-lucide="menu"></i>
+          </button>
+          <div>
+            <h1 id="dashTopbarTitle" class="h5 mb-0 fw-bold">Patient Overview</h1>
+            <div class="small d-none d-sm-block" style="color: var(--cc-text-muted);">ID: <span data-dash-patient-id>CC-DEMO-2048</span></div>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-2 flex-wrap">
+          <button type="button" class="cc-icon-toggle position-relative" data-dash-module="notifications" aria-label="View notifications">
+            <i data-lucide="bell"></i>
+            <span id="topNotifBadge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size:0.65rem;">0</span>
+          </button>
+          <button type="button" class="cc-icon-toggle" data-cc-theme-toggle aria-label="Toggle theme">
+            <i class="cc-theme-icon" data-lucide="moon"></i>
+            <span class="cc-theme-label d-none d-md-inline">Dark</span>
+          </button>
+          <button type="button" class="cc-icon-toggle" data-cc-dir-toggle aria-label="Toggle RTL/LTR">
+            <i data-lucide="languages"></i>
+            <span class="cc-dir-label">RTL</span>
+          </button>
+
+          <div class="cc-user-chip d-none d-md-inline-flex" role="button" tabindex="0" data-dash-module="profile">
+            <span class="cc-user-avatar" data-dash-patient-initials>JM</span>
+            <span class="small fw-bold" data-dash-patient-name>Jordan Mercer (Demo Patient)</span>
+          </div>
+
+          <button type="button" class="btn-cc-outline btn-cc-sm d-none d-sm-inline-flex" data-dash-logout>
+            <i data-lucide="log-out"></i><span class="d-none d-lg-inline">Logout</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Workspace Content -->
+      <main class="cc-dash-content">
+        <div class="cc-demo-notice-bar">
+          <div>
+            <strong>Demonstration Patient Portal:</strong> All appointments, sample ECG attachments, diagnostic templates, reminders, and history records are clearly labelled demo data and not genuine medical records.
+          </div>
+          <span class="cc-demo-badge">Frontend Demo Mode</span>
+        </div>
+
+        <!-- ================================================================
+             MODULE 1: OVERVIEW
+             ================================================================ -->
+        <section id="mod-overview" class="cc-dash-module">
+          <div class="cc-panel mb-4">
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+              <div>
+                <h2 class="h4 fw-bold mb-1">Welcome, <span data-dash-patient-name>Jordan Mercer (Demo Patient)</span></h2>
+                <p class="small mb-0">Demo Patient ID: <strong data-dash-patient-id>CC-DEMO-2048</strong> · Review upcoming sample visits, diagnostic templates, and self-managed reminders.</p>
+              </div>
+              <div class="d-flex flex-wrap gap-2">
+                <button type="button" class="btn-cc-primary btn-cc-sm" data-dash-module="appointments"><i data-lucide="calendar-plus"></i><span>Book Consultation</span></button>
+                <button type="button" class="btn-cc-teal btn-cc-sm" data-dash-module="ecg"><i data-lucide="activity"></i><span>View ECG Reports</span></button>
+                <button type="button" class="btn-cc-outline btn-cc-sm" data-dash-module="tests"><i data-lucide="file-text"></i><span>View Test Reports</span></button>
+                <button type="button" class="btn-cc-outline btn-cc-sm" data-dash-module="medications"><i data-lucide="pill"></i><span>Manage Medication Reminders</span></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- KPI Cards -->
+          <div class="row g-3 mb-4">
+            <div class="col-sm-6 col-xl-4 col-xxl-2">
+              <div class="cc-kpi-card">
+                <span class="small fw-semibold" style="color: var(--cc-text-muted);">Upcoming Appointment</span>
+                <div id="ovNextApt" class="fw-bold mt-2" style="color: var(--cc-burgundy);">--</div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-xl-4 col-xxl-2">
+              <div class="cc-kpi-card">
+                <span class="small fw-semibold" style="color: var(--cc-text-muted);">Last Consultation (Demo)</span>
+                <div id="ovLastConsult" class="fw-bold mt-2 small">--</div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-xl-4 col-xxl-2">
+              <div class="cc-kpi-card">
+                <span class="small fw-semibold" style="color: var(--cc-text-muted);">Sample ECG Reports</span>
+                <div id="ovEcgCount" class="fs-4 fw-bold mt-2" style="color: var(--cc-teal);">0</div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-xl-4 col-xxl-2">
+              <div class="cc-kpi-card">
+                <span class="small fw-semibold" style="color: var(--cc-text-muted);">Sample Test Reports</span>
+                <div id="ovTestCount" class="fs-4 fw-bold mt-2" style="color: var(--cc-teal);">0</div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-xl-4 col-xxl-2">
+              <div class="cc-kpi-card">
+                <span class="small fw-semibold" style="color: var(--cc-text-muted);">Active Med Reminders</span>
+                <div id="ovMedCount" class="fs-4 fw-bold mt-2">0</div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-xl-4 col-xxl-2">
+              <div class="cc-kpi-card">
+                <span class="small fw-semibold" style="color: var(--cc-text-muted);">Unread Notifications</span>
+                <div id="ovNotifCount" class="fs-4 fw-bold mt-2" style="color: var(--cc-burgundy);">0</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row g-4 mb-4">
+            <div class="col-lg-6">
+              <div class="cc-panel">
+                <h3 class="h6 fw-bold mb-3">Upcoming Appointment (Sample Demo)</h3>
+                <div id="ovUpcomingCard"></div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="cc-panel">
+                <h3 class="h6 fw-bold mb-3">Portal Records Summary (Demo Counts)</h3>
+                <div style="height: 195px;"><canvas id="dashOverviewChart"></canvas></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-lg-6">
+              <div class="cc-panel">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h3 class="h6 fw-bold mb-0">Recent Sample Reports</h3>
+                  <button type="button" class="btn-cc-outline btn-cc-sm" data-dash-module="tests">All Reports</button>
+                </div>
+                <div id="ovRecentReports"></div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="cc-panel">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h3 class="h6 fw-bold mb-0">Medication Reminder Summary</h3>
+                  <button type="button" class="btn-cc-outline btn-cc-sm" data-dash-module="medications">Manage</button>
+                </div>
+                <div id="ovMedSummary"></div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="cc-panel">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h3 class="h6 fw-bold mb-0">Appointment History Preview (Demo)</h3>
+                  <button type="button" class="btn-cc-outline btn-cc-sm" data-dash-module="appointments">Full Schedule</button>
+                </div>
+                <div class="cc-table-wrap">
+                  <table class="cc-table">
+                    <thead><tr><th>ID</th><th>Specialist</th><th>Date &amp; Time</th><th>Status</th></tr></thead>
+                    <tbody id="ovAptHistoryPreview"></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             MODULE 2: APPOINTMENTS
+             ================================================================ -->
+        <section id="mod-appointments" class="cc-dash-module d-none">
+          <div class="row g-4">
+            <div class="col-lg-5">
+              <div class="cc-panel">
+                <h2 class="h5 fw-bold mb-1">Book Consultation (Demo)</h2>
+                <p class="small mb-3">Submit a sample appointment booking request. Not connected to live scheduling.</p>
+                <div id="dashAptError" class="alert alert-danger py-2 small d-none" role="alert"></div>
+                <form id="dashBookAptForm" novalidate>
+                  <div class="mb-3">
+                    <label for="dashAptDoctor" class="form-label">Select Doctor</label>
+                    <select id="dashAptDoctor" class="form-select" required></select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="dashAptSpec" class="form-label">Select Specialization</label>
+                    <select id="dashAptSpec" class="form-select" required>
+                      <option value="">Choose specialization...</option>
+                      <option value="General & Preventive Cardiology">General &amp; Preventive Cardiology</option>
+                      <option value="Coronary Care & Risk Assessment">Coronary Care &amp; Risk Assessment</option>
+                      <option value="Heart Rhythm & ECG Consultation">Heart Rhythm &amp; ECG Consultation</option>
+                      <option value="Echocardiography & Stress Diagnostics">Echocardiography &amp; Stress Diagnostics</option>
+                      <option value="Preventive Heart Health & Lipids">Preventive Heart Health &amp; Lipids</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="dashAptType" class="form-label">Consultation Type</label>
+                    <select id="dashAptType" class="form-select" required>
+                      <option value="General Cardiology Consultation">General Cardiology Consultation</option>
+                      <option value="ECG Testing">ECG Testing</option>
+                      <option value="Echocardiography">Echocardiography</option>
+                      <option value="Cardiac Stress Testing">Cardiac Stress Testing</option>
+                      <option value="Follow-up Consultation">Follow-up Consultation</option>
+                    </select>
+                  </div>
+                  <div class="row g-2 mb-3">
+                    <div class="col-6">
+                      <label for="dashAptDate" class="form-label">Appointment Date</label>
+                      <input type="date" id="dashAptDate" class="form-control" required>
+                    </div>
+                    <div class="col-6">
+                      <label for="dashAptTime" class="form-label">Available Time Slot</label>
+                      <select id="dashAptTime" class="form-select" required>
+                        <option value="09:00 AM">09:00 AM (Demo)</option>
+                        <option value="10:15 AM">10:15 AM (Demo)</option>
+                        <option value="11:30 AM">11:30 AM (Demo)</option>
+                        <option value="02:00 PM">02:00 PM (Demo)</option>
+                        <option value="03:30 PM">03:30 PM (Demo)</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="dashAptContact" class="form-label">Contact Number</label>
+                    <input type="tel" id="dashAptContact" class="form-control" value="+1 (555) 019-4421" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="dashAptReason" class="form-label">Reason for Visit</label>
+                    <textarea id="dashAptReason" rows="2" class="form-control" placeholder="Routine cardiac follow-up..." required></textarea>
+                  </div>
+                  <div class="d-flex gap-2">
+                    <button type="submit" class="btn-cc-primary flex-grow-1">Confirm Appointment</button>
+                    <button type="button" id="dashAptCancelFormBtn" class="btn-cc-outline">Cancel</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div class="col-lg-7">
+              <div class="cc-panel">
+                <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+                  <h2 class="h5 fw-bold mb-0">Upcoming &amp; Past Appointments (Demo)</h2>
+                  <span class="cc-demo-badge">Demo Schedule Records</span>
+                </div>
+                <div class="cc-table-wrap">
+                  <table class="cc-table">
+                    <thead>
+                      <tr>
+                        <th>ID</th><th>Doctor</th><th>Specialization</th><th>Date</th><th>Time</th><th>Type</th><th>Status</th><th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody id="dashAppointmentsBody"></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             MODULE 3: ECG REPORTS
+             ================================================================ -->
+        <section id="mod-ecg" class="cc-dash-module d-none">
+          <div class="cc-panel">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+              <div>
+                <h2 class="h5 fw-bold mb-1">ECG Reports (Sample Demonstration Documents)</h2>
+                <p class="small mb-0">No fabricated ECG traces or automated interpretations are displayed. Real ECG reports must be reviewed directly with a qualified clinician.</p>
+              </div>
+              <span class="cc-demo-badge">Sample Demo Files Only</span>
+            </div>
+            <div class="cc-table-wrap">
+              <table class="cc-table">
+                <thead>
+                  <tr><th>Report ID</th><th>Report Name</th><th>Test Date</th><th>Referring Doctor</th><th>Status</th><th>Actions</th></tr>
+                </thead>
+                <tbody id="dashEcgBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             MODULE 4: TEST REPORTS
+             ================================================================ -->
+        <section id="mod-tests" class="cc-dash-module d-none">
+          <div class="cc-panel">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+              <div>
+                <h2 class="h5 fw-bold mb-1">Diagnostic Test Reports (Sample Demonstration Data)</h2>
+                <p class="small mb-0">Placeholder categories only — no invented lab measurements or abnormal findings.</p>
+              </div>
+              <span class="cc-demo-badge">Demo Templates Only</span>
+            </div>
+
+            <div class="row g-2 mb-3">
+              <div class="col-md-4">
+                <input type="search" id="testSearchInput" class="form-control" placeholder="Search sample report name or ID...">
+              </div>
+              <div class="col-md-4">
+                <select id="testCategoryFilter" class="form-select">
+                  <option value="all">All Categories</option>
+                  <option value="Echocardiography">Echocardiography</option>
+                  <option value="Lipid Profile">Lipid Profile</option>
+                  <option value="Blood Glucose">Blood Glucose</option>
+                  <option value="Complete Blood Count">Complete Blood Count</option>
+                  <option value="Cardiac Stress Test">Cardiac Stress Test</option>
+                  <option value="Other Diagnostic Reports">Other Diagnostic Reports</option>
+                </select>
+              </div>
+              <div class="col-md-3">
+                <input type="date" id="testDateFilter" class="form-control" aria-label="Filter by test date">
+              </div>
+              <div class="col-md-1 d-grid">
+                <button type="button" id="testClearFilterBtn" class="btn-cc-outline btn-cc-sm">Reset</button>
+              </div>
+            </div>
+
+            <div class="cc-table-wrap">
+              <table class="cc-table">
+                <thead>
+                  <tr><th>Report Name</th><th>Test Category</th><th>Test Date</th><th>Status</th><th>View</th><th>Download</th></tr>
+                </thead>
+                <tbody id="dashTestsBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             MODULE 5: MEDICATION REMINDERS
+             ================================================================ -->
+        <section id="mod-medications" class="cc-dash-module d-none">
+          <div class="alert alert-info small mb-4">
+            <strong>Prescription &amp; Reminder Notice:</strong> Enter medication reminders strictly based on your clinician's written prescription. CardioCare does not recommend medications or dosages. Browser reminders are demonstration-only and will not alert when the website is closed.
+          </div>
+
+          <div class="row g-4">
+            <div class="col-lg-4">
+              <div class="cc-panel">
+                <h2 class="h5 fw-bold mb-3">Add / Edit Reminder</h2>
+                <div id="dashMedError" class="alert alert-danger py-2 small d-none" role="alert"></div>
+                <form id="dashMedForm" novalidate>
+                  <input type="hidden" id="medEditId">
+                  <div class="mb-3">
+                    <label for="medName" class="form-label">Medication Name (From Prescription)</label>
+                    <input type="text" id="medName" class="form-control" placeholder="Enter prescribed medication label" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="medDosage" class="form-label">Dosage Instructions</label>
+                    <input type="text" id="medDosage" class="form-control" placeholder="Per your doctor's instructions" required>
+                  </div>
+                  <div class="row g-2 mb-3">
+                    <div class="col-6">
+                      <label for="medFrequency" class="form-label">Frequency</label>
+                      <select id="medFrequency" class="form-select">
+                        <option value="Once daily">Once daily</option>
+                        <option value="Twice daily">Twice daily</option>
+                        <option value="As directed">As directed</option>
+                      </select>
+                    </div>
+                    <div class="col-6">
+                      <label for="medTime" class="form-label">Reminder Time</label>
+                      <input type="time" id="medTime" class="form-control" required>
+                    </div>
+                  </div>
+                  <div class="row g-2 mb-3">
+                    <div class="col-6">
+                      <label for="medStart" class="form-label">Start Date</label>
+                      <input type="date" id="medStart" class="form-control" required>
+                    </div>
+                    <div class="col-6">
+                      <label for="medEnd" class="form-label">End Date</label>
+                      <input type="date" id="medEnd" class="form-control">
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="medNotes" class="form-label">Additional Notes</label>
+                    <textarea id="medNotes" rows="2" class="form-control" placeholder="Optional personal note"></textarea>
+                  </div>
+                  <button type="submit" id="medSubmitBtn" class="btn-cc-primary w-100">Save Reminder</button>
+                </form>
+              </div>
+            </div>
+
+            <div class="col-lg-8">
+              <div class="mb-4">
+                <h2 class="h5 fw-bold mb-3">Active Reminders (Demo)</h2>
+                <div id="dashMedsGrid" class="row g-3"></div>
+              </div>
+
+              <div class="cc-panel">
+                <h3 class="h6 fw-bold mb-3">Reminder Log History (Demo)</h3>
+                <div class="cc-table-wrap">
+                  <table class="cc-table">
+                    <thead><tr><th>Medication Label</th><th>Marked Taken At</th><th>Status</th></tr></thead>
+                    <tbody id="dashMedHistoryBody"></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             MODULE 6: MEDICAL HISTORY
+             ================================================================ -->
+        <section id="mod-history" class="cc-dash-module d-none">
+          <div class="cc-panel mb-4">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+              <div>
+                <h2 class="h5 fw-bold mb-1">Medical History (Sample Demonstration Records)</h2>
+                <p class="small mb-0">Configurable placeholder records only. CardioCare does not infer diagnoses from sample entries.</p>
+              </div>
+              <span class="cc-demo-badge">Sample Information Only</span>
+            </div>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="cc-panel">
+                <h3 class="h6 fw-bold mb-3">Previous Consultations (Demo)</h3>
+                <div id="histConsultationsList"></div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="cc-panel">
+                <h3 class="h6 fw-bold mb-3">Previous Diagnostic Tests (Demo)</h3>
+                <div id="histTestsList"></div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="cc-panel">
+                <h3 class="h6 fw-bold mb-3">Allergies (Demo)</h3>
+                <div id="histAllergiesList"></div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="cc-panel">
+                <h3 class="h6 fw-bold mb-3">Existing Conditions &amp; Family History (Optional Demo)</h3>
+                <div id="histConditionsList"></div>
+                <div id="histFamilyList"></div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="cc-panel">
+                <h3 class="h6 fw-bold mb-3">Patient Medical Notes (Demo)</h3>
+                <form id="dashAddHistoryNoteForm" class="d-flex flex-column flex-sm-row gap-2 mb-3">
+                  <input type="text" id="histNewNoteInput" class="form-control" placeholder="Add a personal reminder note for your next clinic visit...">
+                  <button type="submit" class="btn-cc-teal btn-cc-sm text-nowrap">Add Note</button>
+                </form>
+                <div id="histNotesList"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             MODULE 7: MY PROFILE
+             ================================================================ -->
+        <section id="mod-profile" class="cc-dash-module d-none">
+          <div class="cc-panel">
+            <div class="d-flex flex-wrap align-items-center gap-3 pb-4 mb-4 border-bottom" style="border-color: var(--cc-border) !important;">
+              <div class="cc-user-avatar" style="width:64px;height:64px;font-size:1.35rem;" data-dash-patient-initials>JM</div>
+              <div>
+                <h2 class="h5 fw-bold mb-1" data-dash-patient-name>Jordan Mercer (Demo Patient)</h2>
+                <div class="small" style="color: var(--cc-teal);">Demo Patient ID: <strong data-dash-patient-id>CC-DEMO-2048</strong></div>
+              </div>
+            </div>
+
+            <div id="dashProfError" class="alert alert-danger py-2 small d-none" role="alert"></div>
+            <div id="dashProfSuccess" class="alert alert-success py-2 small d-none" role="alert">Demo profile changes saved locally for this preview session.</div>
+
+            <form id="dashProfileForm" novalidate>
+              <div class="row g-3 mb-4">
+                <div class="col-md-6">
+                  <label for="profFullName" class="form-label">Full Name</label>
+                  <input type="text" id="profFullName" class="form-control" required>
+                </div>
+                <div class="col-md-3">
+                  <label for="profPatientId" class="form-label">Patient ID (Demo)</label>
+                  <input type="text" id="profPatientId" class="form-control" readonly>
+                </div>
+                <div class="col-md-3">
+                  <label for="profDob" class="form-label">Date of Birth</label>
+                  <input type="date" id="profDob" class="form-control">
+                </div>
+                <div class="col-md-6">
+                  <label for="profPhone" class="form-label">Phone Number</label>
+                  <input type="tel" id="profPhone" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="profEmail" class="form-label">Email Address</label>
+                  <input type="email" id="profEmail" class="form-control" required>
+                </div>
+                <div class="col-12">
+                  <label for="profAddress" class="form-label">Address</label>
+                  <input type="text" id="profAddress" class="form-control">
+                </div>
+                <div class="col-md-6">
+                  <label for="profEmergencyName" class="form-label">Emergency Contact Name</label>
+                  <input type="text" id="profEmergencyName" class="form-control">
+                </div>
+                <div class="col-md-6">
+                  <label for="profEmergencyPhone" class="form-label">Emergency Contact Phone</label>
+                  <input type="tel" id="profEmergencyPhone" class="form-control">
+                </div>
+              </div>
+              <div class="d-flex gap-2">
+                <button type="submit" class="btn-cc-primary">Save Changes</button>
+                <button type="button" id="dashProfCancelBtn" class="btn-cc-outline">Cancel</button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             MODULE 8: NOTIFICATIONS
+             ================================================================ -->
+        <section id="mod-notifications" class="cc-dash-module d-none">
+          <div class="cc-panel">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-4">
+              <div>
+                <h2 class="h5 fw-bold mb-1">Portal Notifications (Demo)</h2>
+                <p class="small mb-0">Simulated appointment confirmations, report notices, and clinic announcements.</p>
+              </div>
+              <div class="d-flex gap-2">
+                <button type="button" id="notifMarkAllBtn" class="btn-cc-outline btn-cc-sm">Mark All as Read</button>
+                <button type="button" id="notifClearAllBtn" class="btn-cc-outline btn-cc-sm text-danger">Clear Demo Notifications</button>
+              </div>
+            </div>
+            <div id="dashNotifsList"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <!-- Reschedule Demo Appointment Modal -->
+  <div class="modal fade" id="ccRescheduleModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold">Reschedule Demo Appointment</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form id="ccRescheduleForm">
+          <div class="modal-body">
+            <input type="hidden" id="reschedAptId">
+            <div class="mb-3">
+              <label for="reschedDate" class="form-label">New Date</label>
+              <input type="date" id="reschedDate" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="reschedTime" class="form-label">New Time Slot</label>
+              <select id="reschedTime" class="form-select" required>
+                <option value="09:00 AM">09:00 AM</option>
+                <option value="10:15 AM">10:15 AM</option>
+                <option value="11:30 AM">11:30 AM</option>
+                <option value="02:00 PM">02:00 PM</option>
+                <option value="03:30 PM">03:30 PM</option>
+              </select>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn-cc-outline btn-cc-sm" data-bs-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn-cc-primary btn-cc-sm">Save New Slot</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ECG Report Viewer Modal -->
+  <div class="modal fade" id="ccEcgViewerModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <span class="cc-demo-badge mb-1">Sample Demonstration Report</span>
+            <h5 class="modal-title fw-bold" id="ecgModalTitle">ECG Sample</h5>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-2 small mb-3">
+            <div class="col-sm-4"><strong>Demo Patient ID:</strong> <span id="ecgModalPatientId"></span></div>
+            <div class="col-sm-4"><strong>Test Date:</strong> <span id="ecgModalDate"></span></div>
+            <div class="col-sm-4"><strong>Referring Doctor:</strong> <span id="ecgModalDoctor"></span></div>
+          </div>
+          <div class="border rounded-3 overflow-hidden mb-3">
+            <img src="assets/data/sample-ecg-preview.svg" alt="Sample demonstration ECG attachment placeholder" class="w-100">
+          </div>
+          <div class="p-3 rounded-3 small" style="background-color: var(--cc-burgundy-soft);">
+            <strong>Clinical Review Notice:</strong> <span id="ecgModalSummary"></span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-cc-outline btn-cc-sm" data-bs-dismiss="modal">Close</button>
+          <button type="button" id="ecgModalDownloadBtn" class="btn-cc-primary btn-cc-sm">Download Sample Report</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Test Report Viewer Modal -->
+  <div class="modal fade" id="ccTestViewerModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <span class="cc-demo-badge mb-1">Sample Demonstration Record</span>
+            <h5 class="modal-title fw-bold" id="testModalTitle">Test Report</h5>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <ul class="list-unstyled small mb-3 d-grid gap-2">
+            <li><strong>Report ID:</strong> <span id="testModalId"></span></li>
+            <li><strong>Category:</strong> <span id="testModalCat"></span></li>
+            <li><strong>Test Date:</strong> <span id="testModalDate"></span></li>
+            <li><strong>Clinician:</strong> <span id="testModalDoc"></span></li>
+            <li><strong>Status:</strong> <span id="testModalStatus"></span></li>
+          </ul>
+          <div class="p-3 rounded-3 small" style="background-color: var(--cc-bg-subtle);">
+            <strong>Sample Notice:</strong> <span id="testModalNote"></span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-cc-outline btn-cc-sm" data-bs-dismiss="modal">Close</button>
+          <button type="button" id="testModalDownloadBtn" class="btn-cc-primary btn-cc-sm">Download Sample</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script src="assets/js/demo-data.js"></script>
+  <script src="assets/js/app-core.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>
+

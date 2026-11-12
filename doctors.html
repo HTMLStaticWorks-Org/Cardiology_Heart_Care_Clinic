@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heart Specialists — CardioCare Clinic</title>
+  <meta name="description" content="Explore CardioCare's specialist cardiology team, clinical interests, languages, and sample consultation schedules.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+  <header class="cc-navbar">
+    <div class="cc-container">
+      <div class="cc-navbar-row">
+        <a href="index.html" class="cc-brand" aria-label="CardioCare Home">
+          <svg class="cc-brand-mark" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <rect width="64" height="64" rx="16" fill="#7B263A"/>
+            <rect x="6" y="6" width="52" height="52" rx="12" stroke="#FFFFFF" stroke-opacity="0.22" stroke-width="1.5"/>
+            <path d="M12 34H21L25.5 22L31.5 44L36.5 28L40 34H52" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="52" cy="34" r="3" fill="#168C91" stroke="#FFFFFF" stroke-width="1.5"/>
+          </svg>
+          <span class="cc-brand-text">
+            <span class="cc-brand-name">CardioCare</span>
+            <span class="cc-brand-tag">Your Heart. Our Priority.</span>
+          </span>
+        </a>
+
+        <nav class="cc-nav-desktop" aria-label="Main Navigation">
+          <ul class="cc-nav-links">
+            <li class="dropdown">
+              <a href="#" class="cc-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav_home">Home</a>
+              <ul class="dropdown-menu cc-dropdown-menu">
+                <li><a class="dropdown-item" href="index.html">Home 1 — Cardiology</a></li>
+                <li><a class="dropdown-item" href="home-2.html">Home 2 — Heart Care Clinic</a></li>
+              </ul>
+            </li>
+            <li><a href="services.html" class="cc-nav-link" data-i18n="nav_services">Services</a></li>
+            <li><a href="doctors.html" class="cc-nav-link active" data-i18n="nav_doctors">Doctors</a></li>
+            <li><a href="index.html#about-us" class="cc-nav-link" data-i18n="nav_about">About Us</a></li>
+            <li><a href="index.html#contact-us" class="cc-nav-link" data-i18n="nav_contact">Contact</a></li>
+            <li><a href="dashboard.html" class="cc-nav-link" data-i18n="nav_dashboard">Dashboard</a></li>
+          </ul>
+          <div class="cc-nav-actions">
+            <button type="button" class="cc-icon-toggle" data-cc-theme-toggle><i class="cc-theme-icon" data-lucide="moon"></i><span class="cc-theme-label">Dark</span></button>
+            <button type="button" class="cc-icon-toggle" data-cc-dir-toggle><i data-lucide="languages"></i><span class="cc-dir-label">RTL</span></button>
+            <a href="login.html" class="btn-cc-outline btn-cc-sm"><i data-lucide="user"></i><span data-i18n="nav_login">Patient Login</span></a>
+            <button type="button" class="btn-cc-primary btn-cc-sm" data-cc-book><i data-lucide="calendar-plus"></i><span data-i18n="nav_book">Book Appointment</span></button>
+          </div>
+        </nav>
+
+        <button type="button" class="cc-hamburger-btn" data-bs-toggle="offcanvas" data-bs-target="#ccMobileDrawer" aria-controls="ccMobileDrawer" aria-label="Open navigation menu">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="offcanvas offcanvas-end cc-offcanvas" tabindex="-1" id="ccMobileDrawer" aria-labelledby="ccMobileDrawerLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title fw-bold" id="ccMobileDrawerLabel">CardioCare Menu</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close menu"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column justify-content-between">
+      <div>
+        <ul class="cc-mobile-nav-list">
+          <li><a href="index.html" class="cc-nav-link">Home 1 — Cardiology</a></li>
+          <li><a href="home-2.html" class="cc-nav-link">Home 2 — Heart Care Clinic</a></li>
+          <li><a href="services.html" class="cc-nav-link" data-i18n="nav_services">Services</a></li>
+          <li><a href="doctors.html" class="cc-nav-link active" data-i18n="nav_doctors">Doctors</a></li>
+          <li><a href="index.html#about-us" class="cc-nav-link" data-i18n="nav_about">About Us</a></li>
+          <li><a href="index.html#contact-us" class="cc-nav-link" data-i18n="nav_contact">Contact</a></li>
+          <li><a href="dashboard.html" class="cc-nav-link" data-i18n="nav_dashboard">Dashboard</a></li>
+        </ul>
+        <div class="cc-mobile-controls">
+          <button type="button" class="cc-icon-toggle w-100" data-cc-theme-toggle><i class="cc-theme-icon" data-lucide="moon"></i><span class="cc-theme-label">Dark</span></button>
+          <button type="button" class="cc-icon-toggle w-100" data-cc-dir-toggle><i data-lucide="languages"></i><span class="cc-dir-label">RTL</span></button>
+        </div>
+        <div class="d-grid gap-2">
+          <a href="login.html" class="btn-cc-outline"><i data-lucide="user"></i><span data-i18n="nav_login">Patient Login</span></a>
+          <button type="button" class="btn-cc-primary" data-cc-book data-bs-dismiss="offcanvas"><i data-lucide="calendar-plus"></i><span data-i18n="nav_book">Book Appointment</span></button>
+        </div>
+      </div>
+      <div class="cc-emergency-banner mt-4">
+        <p class="small mb-0"><strong>Urgent Symptoms?</strong> Call local emergency services immediately for chest pain or sudden breathlessness.</p>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- DOCTORS HERO -->
+    <section class="cc-page-hero">
+      <div class="cc-container text-center">
+        <div class="cc-hero-animate mx-auto" style="max-width: 760px;">
+          <span class="cc-eyebrow" style="background: rgba(255,255,255,0.14); color: #FFFFFF;">Specialist Directory (Sample Demo Profiles)</span>
+          <h1 class="display-5 fw-bold mb-3">Meet the Specialists Behind Your Heart Care.</h1>
+          <p class="lead mb-0">
+            Get to know our cardiology team and explore their areas of expertise. All doctor names, credentials, and timings below are configurable demo profiles until real clinic details are supplied.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FILTER + DIRECTORY -->
+    <section class="cc-section cc-section-soft">
+      <div class="cc-container">
+        <div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
+          <button type="button" class="btn-cc-primary btn-cc-sm" data-doc-filter="all">All Specialists</button>
+          <button type="button" class="btn-cc-outline btn-cc-sm" data-doc-filter="senior">Senior Consultant</button>
+          <button type="button" class="btn-cc-outline btn-cc-sm" data-doc-filter="interventional">Interventional</button>
+          <button type="button" class="btn-cc-outline btn-cc-sm" data-doc-filter="clinical">Clinical</button>
+          <button type="button" class="btn-cc-outline btn-cc-sm" data-doc-filter="diagnostic">Diagnostic</button>
+          <button type="button" class="btn-cc-outline btn-cc-sm" data-doc-filter="preventive">Preventive</button>
+        </div>
+
+        <div class="alert alert-warning text-center small mb-5 mx-auto" style="max-width: 820px;">
+          <strong>Demo Schedule Notice:</strong> Listed consultation slots and doctor profiles are illustrative demonstration records and do not represent live hospital availability.
+        </div>
+
+        <div id="doctorsDirectoryGrid" class="row g-4 justify-content-center"></div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cc-section cc-section-rose">
+      <div class="cc-container text-center">
+        <div class="cc-section-header mb-4">
+          <h2 class="cc-section-title">Find the Right Heart Specialist for Your Needs.</h2>
+          <p class="cc-section-subtitle">Request a demo consultation with any cardiology role above or submit a general scheduling inquiry.</p>
+        </div>
+        <button type="button" class="btn-cc-primary" data-cc-book>
+          <i data-lucide="calendar-plus"></i><span>Book Consultation</span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="cc-footer">
+    <div class="cc-container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <a href="index.html" class="d-inline-flex align-items-center gap-2 mb-3 text-white">
+            <svg width="36" height="36" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+              <rect width="64" height="64" rx="16" fill="#7B263A"/>
+              <path d="M12 34H21L25.5 22L31.5 44L36.5 28L40 34H52" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="fw-bold fs-5 text-white">CardioCare</span>
+          </a>
+          <p>Your Heart. Our Priority. Dedicated clinical consultations and calm cardiac diagnostic care.</p>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6>Quick Links</h6>
+          <ul class="cc-footer-links">
+            <li><a href="index.html">Home 1 — Cardiology</a></li>
+            <li><a href="home-2.html">Home 2 — Heart Care Clinic</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="doctors.html">Doctors</a></li>
+            <li><a href="login.html">Patient Login</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-3">
+          <h6>Specialties (Demo)</h6>
+          <ul class="cc-footer-links">
+            <li>General &amp; Preventive Cardiology</li>
+            <li>Interventional Consultation</li>
+            <li>Cardiac Diagnostics</li>
+            <li>Follow-up Care</li>
+          </ul>
+        </div>
+        <div class="col-lg-3">
+          <h6>Contact (Demo)</h6>
+          <ul class="cc-footer-links">
+            <li>420 Clinical Wellness Blvd, Suite 310</li>
+            <li>Phone: +1 (555) 014-8920</li>
+            <li>care.demo@cardiocare.example</li>
+          </ul>
+        </div>
+      </div>
+      <div class="cc-footer-emergency">
+        <p><strong>Emergency Medical Disclaimer:</strong> If you experience possible heart attack symptoms or urgent medical distress, call local emergency services immediately rather than waiting for an online clinic slot.</p>
+      </div>
+      <div class="cc-footer-bottom">
+        <p class="mb-0 small">&copy; 2026 CardioCare Clinic (Frontend Demonstration).</p>
+        <p class="mb-0 small">All doctor profiles clearly labelled as demo data.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Doctor Profile Modal -->
+  <div class="modal fade" id="ccDoctorProfileModal" tabindex="-1" aria-labelledby="docModalName" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <span class="cc-demo-badge mb-1">Sample Demo Profile</span>
+            <h5 class="modal-title fw-bold" id="docModalName">Doctor Name</h5>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-4 align-items-start">
+            <div class="col-md-4">
+              <img id="docModalPhoto" src="" alt="" class="rounded-3 w-100" style="aspect-ratio: 4/4.5; object-fit: cover; object-position: center 20%;">
+            </div>
+            <div class="col-md-8">
+              <p class="fw-bold mb-2" style="color: var(--cc-teal);" id="docModalRole"></p>
+              <p class="small mb-3" id="docModalBio"></p>
+              <div class="row g-2 small mb-3">
+                <div class="col-sm-6"><strong>Qualification:</strong> <span id="docModalQual"></span></div>
+                <div class="col-sm-6"><strong>Experience:</strong> <span id="docModalExp"></span></div>
+                <div class="col-sm-6"><strong>Specialization:</strong> <span id="docModalSpec"></span></div>
+                <div class="col-sm-6"><strong>Languages:</strong> <span id="docModalLang"></span></div>
+              </div>
+              <div class="mb-3">
+                <div class="small fw-bold mb-2">Clinical Interests</div>
+                <div id="docModalInterests" class="d-flex flex-wrap gap-2"></div>
+              </div>
+              <div>
+                <div class="small fw-bold mb-2">Sample Demo Consultation Slots (Illustrative Only)</div>
+                <div id="docModalSlots" class="d-flex flex-wrap gap-2"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <span class="small" style="color: var(--cc-text-muted);">Demo schedule — not connected to live availability.</span>
+          <button type="button" id="docModalBookBtn" class="btn-cc-primary btn-cc-sm">Book Appointment</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shared Booking Modal -->
+  <div class="modal fade" id="ccBookingModal" tabindex="-1" aria-labelledby="ccBookingModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold" id="ccBookingModalTitle">Book a Cardiology Consultation (Demo)</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form id="ccPublicBookingForm" novalidate>
+          <div class="modal-body">
+            <div id="bkFormError" class="alert alert-danger py-2 small d-none" role="alert"></div>
+            <div class="row g-3">
+              <div class="col-md-6"><label for="bkPatientName" class="form-label">Patient Full Name</label><input type="text" id="bkPatientName" class="form-control" required></div>
+              <div class="col-md-6"><label for="bkPhone" class="form-label">Contact Number</label><input type="tel" id="bkPhone" class="form-control" required></div>
+              <div class="col-md-6"><label for="bkDoctor" class="form-label">Select Cardiologist</label><select id="bkDoctor" class="form-select" required></select></div>
+              <div class="col-md-6">
+                <label for="bkSpecialization" class="form-label">Specialization</label>
+                <select id="bkSpecialization" class="form-select" required>
+                  <option value="General & Preventive Cardiology">General &amp; Preventive Cardiology</option>
+                  <option value="Coronary Care & Risk Assessment">Coronary Care &amp; Risk Assessment</option>
+                  <option value="Heart Rhythm & ECG Consultation">Heart Rhythm &amp; ECG Consultation</option>
+                  <option value="Echocardiography & Stress Diagnostics">Echocardiography &amp; Stress Diagnostics</option>
+                  <option value="Preventive Heart Health & Lipids">Preventive Heart Health &amp; Lipids</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <label for="bkType" class="form-label">Consultation Type</label>
+                <select id="bkType" class="form-select" required>
+                  <option value="General Cardiology Consultation">General Cardiology Consultation</option>
+                  <option value="ECG Testing">ECG Testing</option>
+                  <option value="Echocardiography">Echocardiography</option>
+                  <option value="Cardiac Stress Testing">Cardiac Stress Testing</option>
+                  <option value="Preventive Cardiology">Preventive Cardiology</option>
+                  <option value="Follow-up Consultation">Follow-up Consultation</option>
+                </select>
+              </div>
+              <div class="col-md-4"><label for="bkDate" class="form-label">Preferred Date</label><input type="date" id="bkDate" class="form-control" required></div>
+              <div class="col-md-4">
+                <label for="bkSlot" class="form-label">Sample Time Slot</label>
+                <select id="bkSlot" class="form-select" required>
+                  <option value="09:00 AM">09:00 AM (Demo)</option>
+                  <option value="10:15 AM">10:15 AM (Demo)</option>
+                  <option value="11:30 AM">11:30 AM (Demo)</option>
+                  <option value="02:00 PM">02:00 PM (Demo)</option>
+                  <option value="03:30 PM">03:30 PM (Demo)</option>
+                </select>
+              </div>
+              <div class="col-12"><label for="bkReason" class="form-label">Reason for Visit</label><textarea id="bkReason" rows="2" class="form-control" required></textarea></div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn-cc-outline btn-cc-sm" data-bs-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn-cc-primary btn-cc-sm">Confirm Demo Booking</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script src="assets/js/demo-data.js"></script>
+  <script src="assets/js/app-core.js"></script>
+  <script src="assets/js/public-pages.js"></script>
+</body>
+</html>
+

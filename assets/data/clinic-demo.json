@@ -1,0 +1,22 @@
+{
+  "meta": {
+    "clinicName": "CardioCare",
+    "tagline": "Your Heart. Our Priority.",
+    "demoNotice": "All clinic profiles, schedules, and sample records in this JSON payload are frontend demonstration data only."
+  },
+  "clinicContact": {
+    "address": "420 Clinical Wellness Boulevard, Suite 310 (Demo Clinic Address)",
+    "phone": "+1 (555) 014-8920 (Demo Line)",
+    "email": "care.demo@cardiocare.example",
+    "hours": "Mon – Sat: 8:00 AM – 6:30 PM | Sun: Emergency Guidance Only"
+  },
+  "availableSlots": [
+    "09:00 AM",
+    "10:15 AM",
+    "11:30 AM",
+    "02:00 PM",
+    "03:30 PM",
+    "04:45 PM"
+  ]
+}
+
