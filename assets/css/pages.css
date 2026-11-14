@@ -137,12 +137,74 @@
   margin-top: 2px;
 }
 
-/* Patient Journey Timeline (Horizontal on Desktop, Vertical on Mobile) */
+/* Patient Journey Timeline */
 .cc-journey-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 18px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 22px);
   position: relative;
+  width: 100%;
+  margin-inline: auto;
+  justify-content: center;
+}
+
+.cc-journey-grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  max-width: 1160px;
+  margin-inline: auto;
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .cc-journey-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    justify-content: center;
+    max-width: 900px;
+    margin-inline: auto;
+  }
+  .cc-journey-grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 780px;
+    margin-inline: auto;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .cc-journey-grid,
+  .cc-journey-grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    max-width: 720px;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .cc-journey-grid,
+  .cc-journey-grid-4 {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding-inline-start: 22px;
+    border-inline-start: 2px dashed var(--cc-teal);
+    max-width: 520px;
+    margin-inline: auto;
+  }
+  [dir="rtl"] .cc-journey-grid,
+  [dir="rtl"] .cc-journey-grid-4 {
+    padding-inline-start: 0;
+    padding-inline-end: 22px;
+    border-inline-start: none;
+    border-inline-end: 2px dashed var(--cc-teal);
+  }
+  .cc-journey-step {
+    text-align: start;
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 16px;
+  }
+  .cc-journey-num {
+    margin-bottom: 0;
+  }
 }
 
 .cc-journey-step {
@@ -155,41 +217,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
   height: 100%;
+  min-width: 0; /* CRITICAL: prevents flex/grid child overflow */
   box-shadow: var(--cc-shadow-xs);
+  transition: transform var(--cc-transition), box-shadow var(--cc-transition);
+  box-sizing: border-box;
 }
 
-.cc-journey-num {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--cc-burgundy), var(--cc-teal));
-  color: #FFFFFF;
-  font-weight: 800;
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 14px;
-  flex-shrink: 0;
-}
-
-@media (max-width: 991.98px) {
-  .cc-journey-grid {
-    grid-template-columns: 1fr;
-    gap: 14px;
-    padding-inline-start: 22px;
-    border-inline-start: 2px dashed var(--cc-teal);
-  }
-  .cc-journey-step {
-    text-align: start;
-    align-items: flex-start;
-    flex-direction: row;
-    gap: 16px;
-  }
-  .cc-journey-num {
-    margin-bottom: 0;
-  }
+.cc-journey-step:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--cc-shadow-md);
 }
 
 /* Swiper Customization */

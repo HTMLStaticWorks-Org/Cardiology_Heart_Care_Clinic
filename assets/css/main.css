@@ -240,25 +240,32 @@ img {
    the hamburger drawer.
    ========================================================================== */
 .cc-navbar {
-  position: sticky;
+  position: fixed !important;
   top: 0;
   left: 0;
   right: 0;
   width: 100%;
   z-index: 1050;
   height: var(--cc-navbar-height);
-  background-color: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--cc-border);
   display: flex;
   align-items: center;
   box-sizing: border-box;
+  box-shadow: 0 2px 12px rgba(15, 25, 35, 0.06);
   transition: background-color var(--cc-transition), border-color var(--cc-transition), box-shadow var(--cc-transition);
 }
 
+body.cc-has-fixed-nav,
+body:has(.cc-navbar) {
+  padding-top: var(--cc-navbar-height);
+}
+
 [data-theme="dark"] .cc-navbar {
-  background-color: rgba(23, 36, 50, 0.96);
+  background-color: rgba(23, 36, 50, 0.98);
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
 }
 
 .cc-navbar-row {
