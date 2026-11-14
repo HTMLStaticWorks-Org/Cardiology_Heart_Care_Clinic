@@ -15,78 +15,62 @@
 </head>
 <body>
   <div class="cc-auth-page">
-    <!-- Left Info Pane -->
-    <aside class="cc-auth-visual">
-      <div>
-        <a href="index.html" class="d-inline-flex align-items-center gap-2 text-white mb-4" aria-label="Return to CardioCare Home">
-          <svg width="42" height="42" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-            <rect width="64" height="64" rx="16" fill="#FFFFFF" fill-opacity="0.16"/>
+    <div class="cc-auth-topbar register-topbar">
+      <button type="button" class="cc-icon-toggle" data-cc-theme-toggle aria-label="Toggle theme">
+        <i class="cc-theme-icon" data-lucide="moon"></i><span class="cc-theme-label">Dark</span>
+      </button>
+      <button type="button" class="cc-icon-toggle" data-cc-dir-toggle aria-label="Toggle RTL/LTR">
+        <i data-lucide="languages"></i><span class="cc-dir-label">RTL</span>
+      </button>
+    </div>
+
+    <div class="cc-auth-card cc-auth-register-card">
+      <div class="text-center mb-4">
+        <a href="index.html" class="d-inline-flex align-items-center gap-2 text-decoration-none mb-3" aria-label="CardioCare Home">
+          <svg width="44" height="44" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <rect width="64" height="64" rx="16" fill="#7B263A"/>
+            <rect x="6" y="6" width="52" height="52" rx="12" stroke="#FFFFFF" stroke-opacity="0.22" stroke-width="1.5"/>
             <path d="M12 34H21L25.5 22L31.5 44L36.5 28L40 34H52" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="52" cy="34" r="3" fill="#168C91" stroke="#FFFFFF" stroke-width="1.5"/>
           </svg>
-          <div>
-            <div class="fw-bold fs-4 lh-1">CardioCare</div>
-            <div class="small" style="opacity:0.85;">Your Heart. Our Priority.</div>
-          </div>
+          <span class="d-flex flex-column text-start lh-1">
+            <span class="fw-bold fs-4" style="color: var(--cc-burgundy);">CardioCare</span>
+            <span class="small fw-semibold mt-1" style="color: var(--cc-teal); font-size: 0.75rem; letter-spacing: 0.03em;">Your Heart. Our Priority.</span>
+          </span>
         </a>
-
-        <div class="cc-auth-visual-photo">
-          <img src="https://images.pexels.com/photos/5452201/pexels-photo-5452201.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Doctor preparing patient onboarding notes on a clinical tablet">
-        </div>
-
-        <h2 class="h4 text-white fw-bold mb-2">Demo Patient Onboarding</h2>
-        <p class="small mb-0" style="color: rgba(255,255,255,0.85);">
-          Create a demonstration profile to explore booking requests, sample ECG previews, diagnostic templates, and medication reminder organization.
-        </p>
+        <div><span class="cc-demo-badge">Demo Registration Only</span></div>
+        <h1 class="h3 fw-bold mt-2 mb-1">Create Patient Account (Demo)</h1>
+        <p class="small text-muted mb-0">Use sample placeholder details to explore the CardioCare Patient Dashboard.</p>
       </div>
 
-      <div class="mt-4 pt-3 border-top" style="border-color: rgba(255,255,255,0.18) !important;">
-        <p class="small mb-0" style="color: rgba(255,255,255,0.85);">
-          <strong>Privacy Notice:</strong> This registration form operates strictly in frontend demo mode. Please do not submit real protected health information, national IDs, or real passwords.
-        </p>
-      </div>
-    </aside>
+      <div id="registerError" class="alert alert-danger py-2 small d-none" role="alert"></div>
 
-    <!-- Right Registration Pane -->
-    <main class="cc-auth-form-pane">
-      <div class="cc-auth-topbar">
-        <a href="index.html" class="btn-cc-outline btn-cc-sm">
-          <i data-lucide="arrow-left" class="cc-rtl-flip"></i><span>Back to Home</span>
-        </a>
-        <div class="d-flex gap-2">
-          <button type="button" class="cc-icon-toggle" data-cc-theme-toggle><i class="cc-theme-icon" data-lucide="moon"></i><span class="cc-theme-label">Dark</span></button>
-          <button type="button" class="cc-icon-toggle" data-cc-dir-toggle><i data-lucide="languages"></i><span class="cc-dir-label">RTL</span></button>
+      <div id="registerSuccessCard" class="d-none text-center py-4">
+        <div class="cc-icon-box mx-auto mb-3" style="background-color: var(--cc-teal-soft); color: var(--cc-teal);"><i data-lucide="check-circle-2" style="width:28px;height:28px;"></i></div>
+        <h2 class="h4 fw-bold mb-2">Demo Account Created!</h2>
+        <p class="small mb-3">Your generated Demo Patient ID is <strong id="regSuccessId" style="color: var(--cc-burgundy);"></strong>.</p>
+        <div class="d-flex flex-wrap justify-content-center gap-2">
+          <a href="dashboard.html" class="btn-cc-primary">Open Patient Dashboard</a>
+          <a href="login.html" class="btn-cc-outline">Go to Login</a>
         </div>
       </div>
 
-      <div class="cc-auth-card cc-auth-register-card">
-        <div class="mb-2"><span class="cc-demo-badge">Demo Registration Only</span></div>
-        <h1 class="h3 fw-bold mb-1">Create Patient Account (Demo)</h1>
-        <p class="small mb-4">Use sample placeholder information to preview the CardioCare Patient Dashboard.</p>
-
-        <div id="registerError" class="alert alert-danger py-2 small d-none" role="alert"></div>
-
-        <div id="registerSuccessCard" class="d-none text-center py-4">
-          <div class="cc-icon-box mx-auto mb-3"><i data-lucide="check-circle-2"></i></div>
-          <h2 class="h4 fw-bold mb-2">Demo Account Created!</h2>
-          <p class="small mb-3">Your generated Demo Patient ID is <strong id="regSuccessId" style="color: var(--cc-burgundy);"></strong>.</p>
-          <div class="d-flex flex-wrap justify-content-center gap-2">
-            <a href="dashboard.html" class="btn-cc-primary">Open Patient Dashboard</a>
-            <a href="login.html" class="btn-cc-outline">Go to Login</a>
-          </div>
-        </div>
-
-        <form id="ccRegisterForm" novalidate>
-          <h2 class="h6 fw-bold mb-3 pb-2 border-bottom" style="color: var(--cc-teal); border-color: var(--cc-border) !important;">Personal Details</h2>
-          <div class="row g-3 mb-4">
-            <div class="col-md-6">
+      <form id="ccRegisterForm" novalidate>
+        <!-- Step 1: Personal Details -->
+        <div class="mb-4">
+          <h2 class="h6 fw-bold mb-3 pb-2 border-bottom" style="color: var(--cc-teal); border-color: var(--cc-border) !important;">
+            <i data-lucide="user" style="width:16px;height:16px;" class="me-1"></i> 1. Personal Details
+          </h2>
+          <div class="row g-3">
+            <div class="col-12 col-md-6">
               <label for="regFullName" class="form-label">Full Name *</label>
               <input type="text" id="regFullName" class="form-control" placeholder="Alex Morgan (Demo)" required>
             </div>
-            <div class="col-md-3">
+            <div class="col-12 col-sm-6 col-md-3">
               <label for="regDob" class="form-label">Date of Birth *</label>
               <input type="date" id="regDob" class="form-control" required>
             </div>
-            <div class="col-md-3">
+            <div class="col-12 col-sm-6 col-md-3">
               <label for="regGender" class="form-label">Gender (Optional)</label>
               <select id="regGender" class="form-select">
                 <option value="">Prefer not to say</option>
@@ -95,50 +79,60 @@
                 <option value="Other">Other</option>
               </select>
             </div>
-            <div class="col-md-6">
+            <div class="col-12 col-md-6">
               <label for="regPhone" class="form-label">Phone Number *</label>
               <input type="tel" id="regPhone" class="form-control" placeholder="+1 555 019 4400" required>
             </div>
-            <div class="col-md-6">
+            <div class="col-12 col-md-6">
               <label for="regEmail" class="form-label">Email Address *</label>
               <input type="email" id="regEmail" class="form-control" placeholder="demo.patient@example.com" required>
             </div>
           </div>
+        </div>
 
-          <h2 class="h6 fw-bold mb-3 pb-2 border-bottom" style="color: var(--cc-teal); border-color: var(--cc-border) !important;">Contact Information</h2>
-          <div class="row g-3 mb-4">
-            <div class="col-md-8">
+        <!-- Step 2: Contact Information -->
+        <div class="mb-4">
+          <h2 class="h6 fw-bold mb-3 pb-2 border-bottom" style="color: var(--cc-teal); border-color: var(--cc-border) !important;">
+            <i data-lucide="map-pin" style="width:16px;height:16px;" class="me-1"></i> 2. Contact Information
+          </h2>
+          <div class="row g-3">
+            <div class="col-12 col-md-8">
               <label for="regAddress" class="form-label">Address *</label>
               <input type="text" id="regAddress" class="form-control" placeholder="123 Demo Wellness Street" required>
             </div>
-            <div class="col-md-4">
+            <div class="col-12 col-md-4">
               <label for="regCity" class="form-label">City *</label>
               <input type="text" id="regCity" class="form-control" placeholder="Brookside" required>
             </div>
-            <div class="col-md-6">
+            <div class="col-12 col-md-6">
               <label for="regEmergencyName" class="form-label">Emergency Contact Name *</label>
               <input type="text" id="regEmergencyName" class="form-control" placeholder="Sample Contact Name" required>
             </div>
-            <div class="col-md-6">
+            <div class="col-12 col-md-6">
               <label for="regEmergencyPhone" class="form-label">Emergency Contact Number *</label>
               <input type="tel" id="regEmergencyPhone" class="form-control" placeholder="+1 555 019 8800" required>
             </div>
           </div>
+        </div>
 
-          <h2 class="h6 fw-bold mb-3 pb-2 border-bottom" style="color: var(--cc-teal); border-color: var(--cc-border) !important;">Account Details (Demo Mode)</h2>
-          <div class="row g-3 mb-3">
-            <div class="col-md-4">
+        <!-- Step 3: Account Details -->
+        <div class="mb-4">
+          <h2 class="h6 fw-bold mb-3 pb-2 border-bottom" style="color: var(--cc-teal); border-color: var(--cc-border) !important;">
+            <i data-lucide="lock" style="width:16px;height:16px;" class="me-1"></i> 3. Account Details (Demo Mode)
+          </h2>
+          <div class="row g-3">
+            <div class="col-12 col-md-4">
               <label for="regPatientId" class="form-label">Patient ID (Demo)</label>
               <input type="text" id="regPatientId" class="form-control" readonly>
             </div>
-            <div class="col-md-4">
+            <div class="col-12 col-md-4">
               <label for="regPassword" class="form-label">Password *</label>
               <div class="input-group">
                 <input type="password" id="regPassword" class="form-control" placeholder="Min 8 chars" required>
                 <button type="button" class="btn btn-outline-secondary" data-cc-toggle-pwd="regPassword" aria-label="Show password"><i data-lucide="eye" style="width:16px;height:16px;"></i></button>
               </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-12 col-md-4">
               <label for="regConfirmPassword" class="form-label">Confirm Password *</label>
               <div class="input-group">
                 <input type="password" id="regConfirmPassword" class="form-control" placeholder="Repeat password" required>
@@ -146,24 +140,33 @@
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="form-check mb-4">
-            <input class="form-check-input" type="checkbox" id="regTerms" required>
-            <label class="form-check-label small" for="regTerms">
-              I understand this is a frontend demonstration portal and agree to the demo terms without entering real patient health records.
-            </label>
-          </div>
+        <div class="form-check mb-4">
+          <input class="form-check-input" type="checkbox" id="regTerms" required>
+          <label class="form-check-label small" for="regTerms">
+            I understand this is a frontend demonstration portal and agree to the demo terms without entering real patient health records.
+          </label>
+        </div>
 
-          <button type="submit" class="btn-cc-primary w-100 mb-3">
-            <i data-lucide="user-plus"></i><span>Create Patient Account</span>
-          </button>
-        </form>
+        <button type="submit" class="btn-cc-primary w-100 mb-3">
+          <i data-lucide="user-plus"></i><span>Create Patient Account</span>
+        </button>
+      </form>
 
-        <div class="text-center small pt-2 border-top" style="border-color: var(--cc-border) !important;">
-          Already have a demo account? <a href="login.html" class="fw-bold">Sign in here</a>
+      <div class="text-center small pt-3 border-top" style="border-color: var(--cc-border) !important;">
+        Already have a demo account? <a href="login.html" class="fw-bold" style="color: var(--cc-teal);">Sign in here</a>
+      </div>
+
+      <div class="text-center pt-3 mt-3 border-top" style="border-color: var(--cc-border) !important;">
+        <div class="small text-muted mb-2">Connect With CardioCare Clinic</div>
+        <div class="d-flex justify-content-center gap-2">
+          <a href="contact.html" class="cc-social-btn" style="background-color: var(--cc-bg-subtle); color: var(--cc-text-primary) !important;" aria-label="LinkedIn"><i data-lucide="linkedin" style="width:16px;height:16px;"></i></a>
+          <a href="contact.html" class="cc-social-btn" style="background-color: var(--cc-bg-subtle); color: var(--cc-text-primary) !important;" aria-label="Facebook"><i data-lucide="facebook" style="width:16px;height:16px;"></i></a>
+          <a href="contact.html" class="cc-social-btn" style="background-color: var(--cc-bg-subtle); color: var(--cc-text-primary) !important;" aria-label="Instagram"><i data-lucide="instagram" style="width:16px;height:16px;"></i></a>
         </div>
       </div>
-    </main>
+    </div>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -174,4 +177,3 @@
   <script src="assets/js/auth.js"></script>
 </body>
 </html>
-

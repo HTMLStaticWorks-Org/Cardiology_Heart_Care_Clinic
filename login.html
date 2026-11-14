@@ -15,103 +15,88 @@
 </head>
 <body>
   <div class="cc-auth-page">
-    <!-- Left Visual Clinical Pane -->
-    <aside class="cc-auth-visual">
-      <div>
-        <a href="index.html" class="d-inline-flex align-items-center gap-2 text-white mb-4" aria-label="Return to CardioCare Home">
-          <svg width="42" height="42" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-            <rect width="64" height="64" rx="16" fill="#FFFFFF" fill-opacity="0.16"/>
+    <div class="cc-auth-topbar">
+      <button type="button" class="cc-icon-toggle" data-cc-theme-toggle aria-label="Toggle theme">
+        <i class="cc-theme-icon" data-lucide="moon"></i><span class="cc-theme-label">Dark</span>
+      </button>
+      <button type="button" class="cc-icon-toggle" data-cc-dir-toggle aria-label="Toggle RTL/LTR">
+        <i data-lucide="languages"></i><span class="cc-dir-label">RTL</span>
+      </button>
+    </div>
+
+    <div class="cc-auth-card">
+      <div class="text-center mb-4">
+        <a href="index.html" class="d-inline-flex align-items-center gap-2 text-decoration-none mb-3" aria-label="CardioCare Home">
+          <svg width="44" height="44" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <rect width="64" height="64" rx="16" fill="#7B263A"/>
+            <rect x="6" y="6" width="52" height="52" rx="12" stroke="#FFFFFF" stroke-opacity="0.22" stroke-width="1.5"/>
             <path d="M12 34H21L25.5 22L31.5 44L36.5 28L40 34H52" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="52" cy="34" r="3" fill="#168C91" stroke="#FFFFFF" stroke-width="1.5"/>
           </svg>
+          <span class="d-flex flex-column text-start lh-1">
+            <span class="fw-bold fs-4" style="color: var(--cc-burgundy);">CardioCare</span>
+            <span class="small fw-semibold mt-1" style="color: var(--cc-teal); font-size: 0.75rem; letter-spacing: 0.03em;">Your Heart. Our Priority.</span>
+          </span>
+        </a>
+        <div><span class="cc-demo-badge">Patient Portal (Demo)</span></div>
+        <h1 class="h3 fw-bold mt-2 mb-1">Welcome Back</h1>
+        <p class="small text-muted mb-0">Access your appointments, ECG reports and medication reminders.</p>
+      </div>
+
+      <div class="p-3 rounded-3 mb-4 small" style="background-color: var(--cc-teal-soft); border: 1px solid rgba(22,140,145,0.25);">
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
           <div>
-            <div class="fw-bold fs-4 lh-1">CardioCare</div>
-            <div class="small" style="opacity:0.85;">Your Heart. Our Priority.</div>
+            <strong>Demo Account:</strong> <code>patient.demo@cardiocare.example</code>
           </div>
-        </a>
-
-        <div class="cc-auth-visual-photo">
-          <img src="https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Cardiologist reviewing patient care plan in a modern clinic office">
+          <button type="button" id="fillDemoCredentialsBtn" class="btn-cc-teal btn-cc-sm">Use Demo Account</button>
         </div>
-
-        <h2 class="h4 text-white fw-bold mb-2">Thoughtful Care, Organized in One Calm Space.</h2>
-        <p class="small mb-0" style="color: rgba(255,255,255,0.85);">
-          Review scheduled consultations, sample demonstration reports, and self-entered medication reminders safely in our frontend portal preview.
-        </p>
+        <div class="mt-1" style="color: var(--cc-text-secondary);">Do not enter real personal passwords or genuine health data.</div>
       </div>
 
-      <div class="mt-4 pt-3 border-top" style="border-color: rgba(255,255,255,0.18) !important;">
-        <svg viewBox="0 0 420 44" class="w-100 mb-2" style="height: 38px; opacity: 0.55;" fill="none" aria-hidden="true">
-          <path d="M0 24 H110 L125 24 L134 15 L143 34 L154 6 L165 39 L174 20 L182 24 H420" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <p class="small mb-0" style="color: rgba(255,255,255,0.82);">
-          <strong>Frontend Demonstration Notice:</strong> This login uses seeded demo credentials only and is not connected to a live clinical backend.
-        </p>
-      </div>
-    </aside>
+      <div id="loginError" class="alert alert-danger py-2 small d-none" role="alert"></div>
 
-    <!-- Right Form Pane -->
-    <main class="cc-auth-form-pane">
-      <div class="cc-auth-topbar" style="max-width: 520px;">
-        <a href="index.html" class="btn-cc-outline btn-cc-sm">
-          <i data-lucide="arrow-left" class="cc-rtl-flip"></i><span>Back to Home</span>
-        </a>
-        <div class="d-flex gap-2">
-          <button type="button" class="cc-icon-toggle" data-cc-theme-toggle><i class="cc-theme-icon" data-lucide="moon"></i><span class="cc-theme-label">Dark</span></button>
-          <button type="button" class="cc-icon-toggle" data-cc-dir-toggle><i data-lucide="languages"></i><span class="cc-dir-label">RTL</span></button>
-        </div>
-      </div>
-
-      <div class="cc-auth-card">
-        <div class="mb-2"><span class="cc-demo-badge">Frontend Demo Portal</span></div>
-        <h1 class="h3 fw-bold mb-2">Welcome Back to Your Patient Portal.</h1>
-        <p class="small mb-4">Access your appointments, reports and medication reminders in one place.</p>
-
-        <div class="p-3 rounded-3 mb-4 small" style="background-color: var(--cc-teal-soft); border: 1px solid rgba(22,140,145,0.25);">
-          <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
-            <div>
-              <strong>Seeded Demo Account:</strong> <code>patient.demo@cardiocare.example</code>
-            </div>
-            <button type="button" id="fillDemoCredentialsBtn" class="btn-cc-teal btn-cc-sm">Use Demo Account</button>
-          </div>
-          <div class="mt-1" style="color: var(--cc-text-secondary);">Do not enter real personal passwords or genuine health data.</div>
+      <form id="ccLoginForm" novalidate>
+        <div class="mb-3">
+          <label for="loginIdentifier" class="form-label">Email Address / Patient ID</label>
+          <input type="text" id="loginIdentifier" class="form-control" placeholder="patient.demo@cardiocare.example or CC-DEMO-2048" required>
         </div>
 
-        <div id="loginError" class="alert alert-danger py-2 small d-none" role="alert"></div>
-
-        <form id="ccLoginForm" novalidate>
-          <div class="mb-3">
-            <label for="loginIdentifier" class="form-label">Email Address / Patient ID</label>
-            <input type="text" id="loginIdentifier" class="form-control" placeholder="patient.demo@cardiocare.example or CC-DEMO-2048" required>
+        <div class="mb-3">
+          <label for="loginPassword" class="form-label">Password</label>
+          <div class="input-group">
+            <input type="password" id="loginPassword" class="form-control" placeholder="Enter demo password" required>
+            <button type="button" class="btn btn-outline-secondary" data-cc-toggle-pwd="loginPassword" aria-label="Show password">
+              <i data-lucide="eye" style="width:18px;height:18px;"></i>
+            </button>
           </div>
+        </div>
 
-          <div class="mb-3">
-            <label for="loginPassword" class="form-label">Password</label>
-            <div class="input-group">
-              <input type="password" id="loginPassword" class="form-control" placeholder="Enter demo password" required>
-              <button type="button" class="btn btn-outline-secondary" data-cc-toggle-pwd="loginPassword" aria-label="Show password">
-                <i data-lucide="eye" style="width:18px;height:18px;"></i>
-              </button>
-            </div>
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="loginRemember">
+            <label class="form-check-label small" for="loginRemember">Remember Me (Demo ID)</label>
           </div>
+          <a href="#" id="forgotPasswordLink" class="small fw-semibold" style="color: var(--cc-burgundy);">Forgot Password?</a>
+        </div>
 
-          <div class="d-flex justify-content-between align-items-center mb-4">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="loginRemember">
-              <label class="form-check-label small" for="loginRemember">Remember Me (Demo ID)</label>
-            </div>
-            <a href="#" id="forgotPasswordLink" class="small fw-semibold">Forgot Password?</a>
-          </div>
+        <button type="submit" id="loginSubmitBtn" class="btn-cc-primary w-100 mb-3">
+          <i data-lucide="log-in"></i><span>Login to Patient Dashboard</span>
+        </button>
+      </form>
 
-          <button type="submit" id="loginSubmitBtn" class="btn-cc-primary w-100 mb-3">
-            <i data-lucide="log-in"></i><span>Login to Patient Dashboard</span>
-          </button>
-        </form>
+      <div class="text-center small pt-3 border-top" style="border-color: var(--cc-border) !important;">
+        New to CardioCare? <a href="register.html" class="fw-bold" style="color: var(--cc-teal);">Create a Demo Patient Account</a>
+      </div>
 
-        <div class="text-center small pt-2 border-top" style="border-color: var(--cc-border) !important;">
-          New to CardioCare? <a href="register.html" class="fw-bold">Create a Demo Patient Account</a>
+      <div class="text-center pt-3 mt-3 border-top" style="border-color: var(--cc-border) !important;">
+        <div class="small text-muted mb-2">Connect With CardioCare Clinic</div>
+        <div class="d-flex justify-content-center gap-2">
+          <a href="contact.html" class="cc-social-btn" style="background-color: var(--cc-bg-subtle); color: var(--cc-text-primary) !important;" aria-label="LinkedIn"><i data-lucide="linkedin" style="width:16px;height:16px;"></i></a>
+          <a href="contact.html" class="cc-social-btn" style="background-color: var(--cc-bg-subtle); color: var(--cc-text-primary) !important;" aria-label="Facebook"><i data-lucide="facebook" style="width:16px;height:16px;"></i></a>
+          <a href="contact.html" class="cc-social-btn" style="background-color: var(--cc-bg-subtle); color: var(--cc-text-primary) !important;" aria-label="Instagram"><i data-lucide="instagram" style="width:16px;height:16px;"></i></a>
         </div>
       </div>
-    </main>
+    </div>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -122,4 +107,3 @@
   <script src="assets/js/auth.js"></script>
 </body>
 </html>
-

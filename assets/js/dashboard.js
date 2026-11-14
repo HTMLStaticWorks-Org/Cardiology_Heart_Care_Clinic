@@ -780,14 +780,14 @@
 
     listEl.innerHTML = notifs.map((n) => `
       <div class="cc-notif-item ${n.read ? '' : 'unread'} mb-3">
-        <div>
+        <div class="cc-notif-content">
           <div class="d-flex flex-wrap align-items-center gap-2 mb-1">
             <span class="cc-inhouse-badge">${CC.escapeHtml(n.category)}</span>
             <span class="small" style="color: var(--cc-text-muted);">${CC.escapeHtml(n.time)}</span>
             ${n.read ? '' : '<span class="cc-demo-badge">Unread</span>'}
           </div>
           <div class="fw-bold small mb-1">${CC.escapeHtml(n.title)}</div>
-          <p class="small mb-0">${CC.escapeHtml(n.message)}</p>
+          <p class="small mb-0" style="word-break: break-word;">${CC.escapeHtml(n.message)}</p>
         </div>
         <button type="button" class="btn-cc-outline btn-cc-sm text-nowrap" data-notif-toggle="${n.id}">
           ${n.read ? 'Mark Unread' : 'Mark as Read'}

@@ -77,34 +77,31 @@
           <button type="button" id="ccDashDrawerBtn" class="cc-icon-toggle cc-dash-drawer-toggle" aria-label="Open sidebar navigation">
             <i data-lucide="menu"></i>
           </button>
-          <div>
-            <h1 id="dashTopbarTitle" class="h5 mb-0 fw-bold">Patient Overview</h1>
-            <div class="small d-none d-sm-block" style="color: var(--cc-text-muted);">ID: <span data-dash-patient-id>CC-DEMO-2048</span></div>
+          <div class="d-flex align-items-center gap-1">
+            <span class="badge rounded-pill" style="background: var(--cc-bg-subtle); color: var(--cc-text-primary); border: 1px solid var(--cc-border); font-size: 0.78rem; padding: 6px 12px; font-weight: 600;">
+              Patient: <span data-dash-patient-id>CC-DEMO-2048</span>
+            </span>
           </div>
         </div>
 
-        <div class="d-flex align-items-center gap-2 flex-wrap">
+        <div class="d-flex align-items-center gap-2">
           <button type="button" class="cc-icon-toggle position-relative" data-dash-module="notifications" aria-label="View notifications">
             <i data-lucide="bell"></i>
             <span id="topNotifBadge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size:0.65rem;">0</span>
           </button>
           <button type="button" class="cc-icon-toggle" data-cc-theme-toggle aria-label="Toggle theme">
             <i class="cc-theme-icon" data-lucide="moon"></i>
-            <span class="cc-theme-label d-none d-md-inline">Dark</span>
+            <span class="cc-theme-label d-none d-sm-inline">Dark</span>
           </button>
           <button type="button" class="cc-icon-toggle" data-cc-dir-toggle aria-label="Toggle RTL/LTR">
             <i data-lucide="languages"></i>
             <span class="cc-dir-label">RTL</span>
           </button>
 
-          <div class="cc-user-chip d-none d-md-inline-flex" role="button" tabindex="0" data-dash-module="profile">
+          <div class="cc-user-chip" role="button" tabindex="0" data-dash-module="profile" title="View Patient Profile">
             <span class="cc-user-avatar" data-dash-patient-initials>JM</span>
-            <span class="small fw-bold" data-dash-patient-name>Jordan Mercer (Demo Patient)</span>
+            <span class="small fw-bold d-none d-md-inline" data-dash-patient-name>Jordan Mercer</span>
           </div>
-
-          <button type="button" class="btn-cc-outline btn-cc-sm d-none d-sm-inline-flex" data-dash-logout>
-            <i data-lucide="log-out"></i><span class="d-none d-lg-inline">Logout</span>
-          </button>
         </div>
       </header>
 
@@ -121,6 +118,13 @@
              MODULE 1: OVERVIEW
              ================================================================ -->
         <section id="mod-overview" class="cc-dash-module">
+          <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+            <div>
+              <h1 class="h4 fw-bold mb-1" style="color: var(--cc-burgundy);">Patient Overview</h1>
+              <p class="small mb-0" style="color: var(--cc-text-muted);">Comprehensive summary of scheduled consultations, diagnostic templates, and self-managed reminders.</p>
+            </div>
+            <span class="cc-demo-badge">Active Portal Session</span>
+          </div>
           <div class="cc-panel mb-4">
             <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
               <div>
@@ -231,7 +235,14 @@
              MODULE 2: APPOINTMENTS
              ================================================================ -->
         <section id="mod-appointments" class="cc-dash-module d-none">
-          <div class="row g-4">
+          <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-4">
+            <div>
+              <h1 class="h4 fw-bold mb-1" style="color: var(--cc-burgundy);">Appointments &amp; Booking</h1>
+              <p class="small mb-0" style="color: var(--cc-text-muted);">Book clinic consultations, manage upcoming visits, and review past appointment records.</p>
+            </div>
+            <span class="cc-demo-badge">Demonstration Scheduling</span>
+          </div>
+          <div class="row g-4 align-items-start">
             <div class="col-lg-5">
               <div class="cc-panel">
                 <h2 class="h5 fw-bold mb-1">Book Consultation (Demo)</h2>
@@ -320,14 +331,14 @@
              MODULE 3: ECG REPORTS
              ================================================================ -->
         <section id="mod-ecg" class="cc-dash-module d-none">
-          <div class="cc-panel">
-            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
-              <div>
-                <h2 class="h5 fw-bold mb-1">ECG Reports (Sample Demonstration Documents)</h2>
-                <p class="small mb-0">No fabricated ECG traces or automated interpretations are displayed. Real ECG reports must be reviewed directly with a qualified clinician.</p>
-              </div>
-              <span class="cc-demo-badge">Sample Demo Files Only</span>
+          <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-4">
+            <div>
+              <h1 class="h4 fw-bold mb-1" style="color: var(--cc-burgundy);">ECG Reports (Sample Demo)</h1>
+              <p class="small mb-0" style="color: var(--cc-text-muted);">View sample 12-lead electrocardiogram documents. Real clinical records require in-person physician review.</p>
             </div>
+            <span class="cc-demo-badge">Sample Demo Files Only</span>
+          </div>
+          <div class="cc-panel">
             <div class="cc-table-wrap">
               <table class="cc-table">
                 <thead>
@@ -343,14 +354,14 @@
              MODULE 4: TEST REPORTS
              ================================================================ -->
         <section id="mod-tests" class="cc-dash-module d-none">
-          <div class="cc-panel">
-            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
-              <div>
-                <h2 class="h5 fw-bold mb-1">Diagnostic Test Reports (Sample Demonstration Data)</h2>
-                <p class="small mb-0">Placeholder categories only — no invented lab measurements or abnormal findings.</p>
-              </div>
-              <span class="cc-demo-badge">Demo Templates Only</span>
+          <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-4">
+            <div>
+              <h1 class="h4 fw-bold mb-1" style="color: var(--cc-burgundy);">Diagnostic Test Reports (Sample Demo)</h1>
+              <p class="small mb-0" style="color: var(--cc-text-muted);">Search and download sample laboratory profiles, stress tests, and echocardiography summary templates.</p>
             </div>
+            <span class="cc-demo-badge">Demo Templates Only</span>
+          </div>
+          <div class="cc-panel">
 
             <div class="row g-2 mb-3">
               <div class="col-md-4">
@@ -390,11 +401,19 @@
              MODULE 5: MEDICATION REMINDERS
              ================================================================ -->
         <section id="mod-medications" class="cc-dash-module d-none">
+          <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-4">
+            <div>
+              <h1 class="h4 fw-bold mb-1" style="color: var(--cc-burgundy);">Medication Reminders</h1>
+              <p class="small mb-0" style="color: var(--cc-text-muted);">Personal reminder organization based on prescribed clinician guidelines. No medical dosing is generated.</p>
+            </div>
+            <span class="cc-demo-badge">Personal Reminder Log</span>
+          </div>
+
           <div class="alert alert-info small mb-4">
             <strong>Prescription &amp; Reminder Notice:</strong> Enter medication reminders strictly based on your clinician's written prescription. CardioCare does not recommend medications or dosages. Browser reminders are demonstration-only and will not alert when the website is closed.
           </div>
 
-          <div class="row g-4">
+          <div class="row g-4 align-items-start">
             <div class="col-lg-4">
               <div class="cc-panel">
                 <h2 class="h5 fw-bold mb-3">Add / Edit Reminder</h2>
@@ -465,14 +484,12 @@
              MODULE 6: MEDICAL HISTORY
              ================================================================ -->
         <section id="mod-history" class="cc-dash-module d-none">
-          <div class="cc-panel mb-4">
-            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
-              <div>
-                <h2 class="h5 fw-bold mb-1">Medical History (Sample Demonstration Records)</h2>
-                <p class="small mb-0">Configurable placeholder records only. CardioCare does not infer diagnoses from sample entries.</p>
-              </div>
-              <span class="cc-demo-badge">Sample Information Only</span>
+          <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-4">
+            <div>
+              <h1 class="h4 fw-bold mb-1" style="color: var(--cc-burgundy);">Medical History (Demo Records)</h1>
+              <p class="small mb-0" style="color: var(--cc-text-muted);">Organized consultation history, diagnostic records, recorded allergies, and personal notes.</p>
             </div>
+            <span class="cc-demo-badge">Sample Information Only</span>
           </div>
 
           <div class="row g-4">
@@ -518,6 +535,13 @@
              MODULE 7: MY PROFILE
              ================================================================ -->
         <section id="mod-profile" class="cc-dash-module d-none">
+          <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-4">
+            <div>
+              <h1 class="h4 fw-bold mb-1" style="color: var(--cc-burgundy);">My Profile &amp; Account Settings</h1>
+              <p class="small mb-0" style="color: var(--cc-text-muted);">Manage personal contact information, emergency contacts, and demonstration account preferences.</p>
+            </div>
+            <span class="cc-demo-badge">Patient Account</span>
+          </div>
           <div class="cc-panel">
             <div class="d-flex flex-wrap align-items-center gap-3 pb-4 mb-4 border-bottom" style="border-color: var(--cc-border) !important;">
               <div class="cc-user-avatar" style="width:64px;height:64px;font-size:1.35rem;" data-dash-patient-initials>JM</div>
@@ -577,17 +601,17 @@
              MODULE 8: NOTIFICATIONS
              ================================================================ -->
         <section id="mod-notifications" class="cc-dash-module d-none">
-          <div class="cc-panel">
-            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-4">
-              <div>
-                <h2 class="h5 fw-bold mb-1">Portal Notifications (Demo)</h2>
-                <p class="small mb-0">Simulated appointment confirmations, report notices, and clinic announcements.</p>
-              </div>
-              <div class="d-flex gap-2">
-                <button type="button" id="notifMarkAllBtn" class="btn-cc-outline btn-cc-sm">Mark All as Read</button>
-                <button type="button" id="notifClearAllBtn" class="btn-cc-outline btn-cc-sm text-danger">Clear Demo Notifications</button>
-              </div>
+          <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-4">
+            <div>
+              <h1 class="h4 fw-bold mb-1" style="color: var(--cc-burgundy);">Portal Notifications (Demo)</h1>
+              <p class="small mb-0" style="color: var(--cc-text-muted);">Simulated appointment confirmations, report notices, and clinic announcements.</p>
             </div>
+            <div class="d-flex gap-2">
+              <button type="button" id="notifMarkAllBtn" class="btn-cc-outline btn-cc-sm">Mark All as Read</button>
+              <button type="button" id="notifClearAllBtn" class="btn-cc-outline btn-cc-sm text-danger">Clear Demo Notifications</button>
+            </div>
+          </div>
+          <div class="cc-panel">
             <div id="dashNotifsList"></div>
           </div>
         </section>

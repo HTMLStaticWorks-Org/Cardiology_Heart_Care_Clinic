@@ -381,6 +381,17 @@ img {
   color: var(--cc-burgundy);
 }
 
+[dir="rtl"] .cc-dropdown-menu,
+[dir="rtl"] .dropdown-menu {
+  text-align: right;
+  right: 0 !important;
+  left: auto !important;
+}
+
+[dir="rtl"] .dropdown-item {
+  text-align: right;
+}
+
 .cc-nav-actions {
   display: flex;
   align-items: center;
@@ -698,6 +709,14 @@ img {
 [data-theme="dark"] .form-check-input:checked {
   background-color: var(--cc-teal);
   border-color: var(--cc-teal);
+}
+
+[data-theme="dark"] input[type="date"]::-webkit-calendar-picker-indicator,
+[data-theme="dark"] input[type="time"]::-webkit-calendar-picker-indicator,
+[data-theme="dark"] input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  filter: invert(1) brightness(1.8);
+  cursor: pointer;
+  opacity: 0.92;
 }
 
 .modal-content {
