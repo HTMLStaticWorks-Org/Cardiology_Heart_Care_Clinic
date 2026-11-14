@@ -185,7 +185,7 @@
 
           <div class="col-lg-5 cc-hero-animate">
             <div class="cc-hero-media-frame">
-              <img src="https://images.pexels.com/photos/4274587/pexels-photo-4274587.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Cardiology specialist reviewing heart care plan with a patient on a tablet">
+              <img src="https://images.pexels.com/photos/6129207/pexels-photo-6129207.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Cardiology specialist reviewing heart care plan with a patient on a tablet">
             </div>
             <div class="cc-hero-v2-floating-card">
               <div class="d-flex align-items-center justify-content-between gap-2">
@@ -243,64 +243,285 @@
       </div>
     </section>
 
-    <!-- SECTION 3: FILTERABLE CARDIAC SERVICES -->
+    <!-- SECTION 3: DEDICATED OUTPATIENT CLINIC PROGRAMS (REPLACES REPEATED GENERIC SERVICES) -->
     <section class="cc-section cc-section-soft">
       <div class="cc-container">
-        <div class="cc-section-header mb-4" data-aos="fade-up">
-          <span class="cc-eyebrow cc-eyebrow-burgundy">Tailored Cardiology Care</span>
-          <h2 class="cc-section-title" data-i18n="services_title">Our Cardiac Services</h2>
-          <p class="cc-section-subtitle">Filter between clinical consultations, in-house diagnostics, and preventive heart health programs.</p>
+        <div class="cc-section-header mb-5" data-aos="fade-up">
+          <span class="cc-eyebrow cc-eyebrow-burgundy">Outpatient Heart Care Clinic</span>
+          <h2 class="cc-section-title">Specialized Clinic Care Programs</h2>
+          <p class="cc-section-subtitle">Dedicated outpatient cardiology consultation tracks and structured heart health evaluations designed for rapid, calm clinical care.</p>
         </div>
 
-        <div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
-          <button type="button" class="btn-cc-primary btn-cc-sm" data-h2-srv-filter="all">All Services</button>
-          <button type="button" class="btn-cc-outline btn-cc-sm" data-h2-srv-filter="consultations">Consultations</button>
-          <button type="button" class="btn-cc-outline btn-cc-sm" data-h2-srv-filter="diagnostics">Diagnostics</button>
-          <button type="button" class="btn-cc-outline btn-cc-sm" data-h2-srv-filter="preventive">Preventive Care</button>
-        </div>
+        <div class="row g-4 mb-4">
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <article class="cc-card h-100 d-flex flex-column justify-content-between p-4">
+              <div>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <span class="cc-inhouse-badge">Comprehensive Program</span>
+                  <span class="small fw-bold" style="color: var(--cc-teal);"><i data-lucide="clock" style="width:14px;height:14px;"></i> 60 Mins</span>
+                </div>
+                <h3 class="h5 mb-2">Executive Cardiac Wellness Package</h3>
+                <p class="small text-muted mb-3">Thorough cardiovascular risk profiling, 12-lead resting ECG, blood pressure assessment, and a direct physician consultation.</p>
+                <ul class="list-unstyled small mb-3 d-grid gap-2 text-secondary">
+                  <li><i data-lucide="check-circle-2" style="width:15px;height:15px;color:var(--cc-teal);" class="me-1"></i> Resting 12-Lead Electrocardiogram</li>
+                  <li><i data-lucide="check-circle-2" style="width:15px;height:15px;color:var(--cc-teal);" class="me-1"></i> Fasting Lipid &amp; Glucose Review</li>
+                  <li><i data-lucide="check-circle-2" style="width:15px;height:15px;color:var(--cc-teal);" class="me-1"></i> Direct Senior Cardiologist Consultation</li>
+                </ul>
+              </div>
+              <button type="button" class="btn-cc-primary w-100" data-cc-book data-service="Executive Cardiac Wellness Package">
+                <i data-lucide="calendar-plus"></i><span>Request Program Slot</span>
+              </button>
+            </article>
+          </div>
 
-        <div id="home2ServicesGrid" class="row g-4"></div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <article class="cc-card h-100 d-flex flex-column justify-content-between p-4">
+              <div>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <span class="cc-inhouse-badge" style="background-color: var(--cc-burgundy-soft); color: var(--cc-burgundy);">Same-Day Evaluation</span>
+                  <span class="small fw-bold" style="color: var(--cc-burgundy);"><i data-lucide="clock" style="width:14px;height:14px;"></i> 35 Mins</span>
+                </div>
+                <h3 class="h5 mb-2">Rapid Symptom &amp; Triage Assessment</h3>
+                <p class="small text-muted mb-3">Expedited outpatient evaluation for recent palpitations, shortness of breath, or mild chest discomfort with immediate vitals check.</p>
+                <ul class="list-unstyled small mb-3 d-grid gap-2 text-secondary">
+                  <li><i data-lucide="check-circle-2" style="width:15px;height:15px;color:var(--cc-teal);" class="me-1"></i> Immediate Oxygen &amp; Vitals Triage</li>
+                  <li><i data-lucide="check-circle-2" style="width:15px;height:15px;color:var(--cc-teal);" class="me-1"></i> Baseline Heart Rhythm Screening</li>
+                  <li><i data-lucide="check-circle-2" style="width:15px;height:15px;color:var(--cc-teal);" class="me-1"></i> On-Site Specialist Triage Guidance</li>
+                </ul>
+              </div>
+              <button type="button" class="btn-cc-primary w-100" data-cc-book data-service="Rapid Symptom & Triage Assessment">
+                <i data-lucide="calendar-plus"></i><span>Request Program Slot</span>
+              </button>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <article class="cc-card h-100 d-flex flex-column justify-content-between p-4">
+              <div>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <span class="cc-inhouse-badge">Targeted Clinic</span>
+                  <span class="small fw-bold" style="color: var(--cc-teal);"><i data-lucide="clock" style="width:14px;height:14px;"></i> 40 Mins</span>
+                </div>
+                <h3 class="h5 mb-2">Hypertension &amp; Vascular Health Clinic</h3>
+                <p class="small text-muted mb-3">Comprehensive blood pressure profiling, home monitoring review, sodium reduction planning, and medication optimization.</p>
+                <ul class="list-unstyled small mb-3 d-grid gap-2 text-secondary">
+                  <li><i data-lucide="check-circle-2" style="width:15px;height:15px;color:var(--cc-teal);" class="me-1"></i> Dual-Arm Clinical BP Calibration</li>
+                  <li><i data-lucide="check-circle-2" style="width:15px;height:15px;color:var(--cc-teal);" class="me-1"></i> Home Blood Pressure Log Interpretation</li>
+                  <li><i data-lucide="check-circle-2" style="width:15px;height:15px;color:var(--cc-teal);" class="me-1"></i> Individualized Vascular Care Strategy</li>
+                </ul>
+              </div>
+              <button type="button" class="btn-cc-primary w-100" data-cc-book data-service="Hypertension & Vascular Health Clinic">
+                <i data-lucide="calendar-plus"></i><span>Request Program Slot</span>
+              </button>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <article class="cc-card h-100 d-flex flex-column justify-content-between p-4">
+              <div>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <span class="cc-inhouse-badge">Rhythm Diagnostics</span>
+                  <span class="small fw-bold" style="color: var(--cc-teal);"><i data-lucide="clock" style="width:14px;height:14px;"></i> 45 Mins</span>
+                </div>
+                <h3 class="h5 mb-2">Arrhythmia &amp; Heart Rhythm Clinic</h3>
+                <p class="small text-muted mb-3">Dedicated clinical consultations for heart flutter, irregular beats, and palpitations with on-site ECG analysis.</p>
+                <ul class="list-unstyled small mb-3 d-grid gap-2 text-secondary">
+                  <li><i data-lucide="check-circle-2" style="width:15px;height:15px;color:var(--cc-teal);" class="me-1"></i> High-Resolution ECG Waveform Review</li>
+                  <li><i data-lucide="check-circle-2" style="width:15px;height:15px;color:var(--cc-teal);" class="me-1"></i> Arrhythmia Symptom Diary Setup</li>
+                  <li><i data-lucide="check-circle-2" style="width:15px;height:15px;color:var(--cc-teal);" class="me-1"></i> Electrophysiology Referral Assessment</li>
+                </ul>
+              </div>
+              <button type="button" class="btn-cc-primary w-100" data-cc-book data-service="Arrhythmia & Heart Rhythm Clinic">
+                <i data-lucide="calendar-plus"></i><span>Request Program Slot</span>
+              </button>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <article class="cc-card h-100 d-flex flex-column justify-content-between p-4">
+              <div>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <span class="cc-inhouse-badge">Preventive Care</span>
+                  <span class="small fw-bold" style="color: var(--cc-teal);"><i data-lucide="clock" style="width:14px;height:14px;"></i> 45 Mins</span>
+                </div>
+                <h3 class="h5 mb-2">Preventive Cardiometabolic Wellness</h3>
+                <p class="small text-muted mb-3">Proactive nutritional counseling, cholesterol breakdown, and family cardiovascular history mapping before symptoms arise.</p>
+                <ul class="list-unstyled small mb-3 d-grid gap-2 text-secondary">
+                  <li><i data-lucide="check-circle-2" style="width:15px;height:15px;color:var(--cc-teal);" class="me-1"></i> Advanced Lipid &amp; Particle Review</li>
+                  <li><i data-lucide="check-circle-2" style="width:15px;height:15px;color:var(--cc-teal);" class="me-1"></i> Structured Dietary Heart Habits</li>
+                  <li><i data-lucide="check-circle-2" style="width:15px;height:15px;color:var(--cc-teal);" class="me-1"></i> Multi-Year Follow-up Schedule</li>
+                </ul>
+              </div>
+              <button type="button" class="btn-cc-primary w-100" data-cc-book data-service="Preventive Cardiometabolic Wellness">
+                <i data-lucide="calendar-plus"></i><span>Request Program Slot</span>
+              </button>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <article class="cc-card h-100 d-flex flex-column justify-content-between p-4">
+              <div>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <span class="cc-inhouse-badge">Gentle Senior Care</span>
+                  <span class="small fw-bold" style="color: var(--cc-teal);"><i data-lucide="clock" style="width:14px;height:14px;"></i> 50 Mins</span>
+                </div>
+                <h3 class="h5 mb-2">Senior Heart &amp; Valve Health Track</h3>
+                <p class="small text-muted mb-3">Gentle, comprehensive outpatient evaluations focused on heart valve function, fluid balance, and medication safety.</p>
+                <ul class="list-unstyled small mb-3 d-grid gap-2 text-secondary">
+                  <li><i data-lucide="check-circle-2" style="width:15px;height:15px;color:var(--cc-teal);" class="me-1"></i> Transthoracic Ultrasound Review</li>
+                  <li><i data-lucide="check-circle-2" style="width:15px;height:15px;color:var(--cc-teal);" class="me-1"></i> Medication Interaction &amp; Safety Check</li>
+                  <li><i data-lucide="check-circle-2" style="width:15px;height:15px;color:var(--cc-teal);" class="me-1"></i> Family Member Consultation Inclusion</li>
+                </ul>
+              </div>
+              <button type="button" class="btn-cc-primary w-100" data-cc-book data-service="Senior Heart & Valve Health Track">
+                <i data-lucide="calendar-plus"></i><span>Request Program Slot</span>
+              </button>
+            </article>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- SECTION 4: FEATURED HEART SPECIALISTS -->
+    <!-- SECTION 4: CLINICAL CARE STANDARDS & OUTPATIENT EXPERIENCE (REPLACES REPEATED DOCTOR CARDS) -->
     <section class="cc-section cc-section-white">
       <div class="cc-container">
-        <div class="cc-section-header" data-aos="fade-up">
-          <span class="cc-eyebrow">Cardiology Team (Demo Profiles)</span>
-          <h2 class="cc-section-title" data-i18n="doctors_title">Meet Our Heart Specialists</h2>
-          <p class="cc-section-subtitle">Clearly marked sample specialist profiles. View full qualifications or request a demo appointment.</p>
-        </div>
-        <div id="home2DoctorsGrid" class="row g-4 justify-content-center mb-4"></div>
-        <div class="text-center">
-          <a href="doctors.html" class="btn-cc-outline">
-            <span>Browse All 5 Specialists</span>
-            <i data-lucide="arrow-right" class="cc-rtl-flip"></i>
-          </a>
+        <div class="row align-items-center g-4 g-lg-5">
+          <div class="col-lg-6" data-aos="fade-right">
+            <span class="cc-eyebrow">Clinical Standards &amp; Care Quality</span>
+            <h2 class="cc-section-title">The Heart Care Clinic Standard.</h2>
+            <p class="mb-4 text-secondary">
+              At CardioCare Clinic, our outpatient care model is centered around unhurried medical dialogue, rapid in-house diagnostics, and clear patient guidance every step of the way.
+            </p>
+            <div class="row g-3 mb-4">
+              <div class="col-sm-6">
+                <div class="cc-feature-pill h-100">
+                  <i data-lucide="clock-3"></i>
+                  <div>
+                    <div class="fw-bold small">Dedicated 30-Min Slots</div>
+                    <div class="small text-muted">Ample time to listen and evaluate without feeling rushed.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="cc-feature-pill h-100">
+                  <i data-lucide="activity"></i>
+                  <div>
+                    <div class="fw-bold small">Same-Day Diagnostics</div>
+                    <div class="small text-muted">Resting ECG &amp; echocardiography completed during your visit.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="cc-feature-pill h-100">
+                  <i data-lucide="file-check"></i>
+                  <div>
+                    <div class="fw-bold small">Portal Record Access</div>
+                    <div class="small text-muted">View sample reports and medication schedules online.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="cc-feature-pill h-100">
+                  <i data-lucide="users"></i>
+                  <div>
+                    <div class="fw-bold small">Coordinated Team</div>
+                    <div class="small text-muted">Senior cardiologists working together on each patient plan.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex flex-wrap gap-3">
+              <button type="button" class="btn-cc-primary" data-cc-book>Book a Consultation</button>
+              <a href="doctors.html" class="btn-cc-outline">View Specialist Directory (5 Doctors)</a>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="cc-hero-media-frame mb-3">
+              <img src="https://images.pexels.com/photos/3845653/pexels-photo-3845653.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Cardiologist consulting calmly in outpatient clinic room">
+            </div>
+            <div class="row g-3 text-center">
+              <div class="col-6 col-sm-3">
+                <div class="p-3 rounded-3" style="background-color: var(--cc-bg-subtle);">
+                  <div class="h4 fw-bold mb-0" style="color: var(--cc-burgundy);">6</div>
+                  <div class="small text-muted">Consult Suites</div>
+                </div>
+              </div>
+              <div class="col-6 col-sm-3">
+                <div class="p-3 rounded-3" style="background-color: var(--cc-bg-subtle);">
+                  <div class="h4 fw-bold mb-0" style="color: var(--cc-teal);">100%</div>
+                  <div class="small text-muted">On-Site Tests</div>
+                </div>
+              </div>
+              <div class="col-6 col-sm-3">
+                <div class="p-3 rounded-3" style="background-color: var(--cc-bg-subtle);">
+                  <div class="h4 fw-bold mb-0" style="color: var(--cc-burgundy);">6 Days</div>
+                  <div class="small text-muted">Open Weekly</div>
+                </div>
+              </div>
+              <div class="col-6 col-sm-3">
+                <div class="p-3 rounded-3" style="background-color: var(--cc-bg-subtle);">
+                  <div class="h4 fw-bold mb-0" style="color: var(--cc-teal);">30 Min</div>
+                  <div class="small text-muted">Visit Length</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 5: INTERACTIVE FACILITIES SPOTLIGHT -->
+    <!-- SECTION 5: CLINIC AMENITIES & PATIENT COMFORT HIGHLIGHTS (REPLACES REPEATED FACILITIES SPOTLIGHT) -->
     <section class="cc-section cc-section-soft">
       <div class="cc-container">
-        <div class="cc-section-header" data-aos="fade-up">
-          <span class="cc-eyebrow cc-eyebrow-burgundy">Illustrative Clinic Tour</span>
-          <h2 class="cc-section-title" data-i18n="facilities_title">Our Facilities</h2>
-          <p class="cc-section-subtitle">Select an area below to preview illustrative sample spaces across CardioCare Clinic.</p>
+        <div class="cc-section-header mb-5" data-aos="fade-up">
+          <span class="cc-eyebrow cc-eyebrow-burgundy">Patient Comfort &amp; Facilities</span>
+          <h2 class="cc-section-title">Designed for Calm, Supportive Visits</h2>
+          <p class="cc-section-subtitle">Every space inside CardioCare Heart Care Clinic is crafted to make your visit stress-free, private, and accessible.</p>
         </div>
 
-        <div class="row g-4 align-items-stretch" data-aos="fade-up">
-          <div class="col-lg-4 d-flex flex-column gap-2" id="home2FacilityTabs"></div>
-          <div class="col-lg-8">
-            <div class="cc-facility-preview-card">
-              <img id="home2FacilityImg" src="https://images.pexels.com/photos/8460231/pexels-photo-8460231.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Clinic facility preview" class="cc-facility-preview-img">
-              <div class="p-4">
-                <div class="mb-2"><span class="cc-demo-badge">Illustrative Sample Imagery</span></div>
-                <h3 id="home2FacilityTitle" class="h4 mb-2">Consultation Rooms</h3>
-                <p id="home2FacilityDesc" class="mb-0">Quiet, private rooms designed for unhurried conversations with your cardiologist.</p>
-              </div>
-            </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <article class="cc-card p-4 h-100">
+              <div class="cc-icon-box mb-3"><i data-lucide="accessibility"></i></div>
+              <h3 class="h5 mb-2">Ground-Floor Step-Free Entrance</h3>
+              <p class="small text-muted mb-0">Direct elevator-free access from the parking area, wide automated doors, and complete wheelchair accessibility throughout.</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <article class="cc-card p-4 h-100">
+              <div class="cc-icon-box mb-3"><i data-lucide="coffee"></i></div>
+              <h3 class="h5 mb-2">Quiet, Noise-Dampened Waiting Lounge</h3>
+              <p class="small text-muted mb-0">Peaceful check-in area with acoustic sound-dampening, ergonomic armchair seating, and soothing natural lighting.</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <article class="cc-card p-4 h-100">
+              <div class="cc-icon-box mb-3"><i data-lucide="heart-pulse"></i></div>
+              <h3 class="h5 mb-2">Resting ECG &amp; Diagnostic Bay</h3>
+              <p class="small text-muted mb-0">Private diagnostic bays equipped with modern 12-lead electrocardiography stations and temperature-controlled comfort.</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <article class="cc-card p-4 h-100">
+              <div class="cc-icon-box mb-3"><i data-lucide="scan"></i></div>
+              <h3 class="h5 mb-2">Non-Invasive Ultrasound Suite</h3>
+              <p class="small text-muted mb-0">Dedicated echocardiography suite offering safe ultrasound assessments with immediate review by your cardiologist.</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <article class="cc-card p-4 h-100">
+              <div class="cc-icon-box mb-3"><i data-lucide="message-square-heart"></i></div>
+              <h3 class="h5 mb-2">Family Consultation Rooms</h3>
+              <p class="small text-muted mb-0">Comfortable consultation suites accommodating family members and caregivers so you can discuss care plans together.</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <article class="cc-card p-4 h-100">
+              <div class="cc-icon-box mb-3"><i data-lucide="shield-check"></i></div>
+              <h3 class="h5 mb-2">Patient Care Coordinator Desk</h3>
+              <p class="small text-muted mb-0">Friendly reception team ready to assist with pre-visit preparation, insurance documentation, and portal onboarding.</p>
+            </article>
           </div>
         </div>
       </div>
@@ -327,20 +548,44 @@
       </div>
     </section>
 
-    <!-- SECTION 7: PATIENT JOURNEY & DEMO TESTIMONIALS -->
+    <!-- SECTION 7: OUTPATIENT CLINIC CARE PATHWAY & DEMO TESTIMONIALS -->
     <section class="cc-section cc-section-soft">
       <div class="cc-container">
         <div class="cc-section-header" data-aos="fade-up">
-          <span class="cc-eyebrow">Step-by-Step Care</span>
-          <h2 class="cc-section-title" data-i18n="journey_title">Your Patient Journey</h2>
+          <span class="cc-eyebrow cc-eyebrow-burgundy">Your Outpatient Visit</span>
+          <h2 class="cc-section-title">The Heart Clinic Care Pathway</h2>
+          <p class="cc-section-subtitle">A clear, supportive four-stage process designed for calm, transparent heart care.</p>
         </div>
 
         <div class="cc-journey-grid mb-5" data-aos="fade-up">
-          <div class="cc-journey-step"><div class="cc-journey-num">1</div><div><h3 class="h6 mb-1">Book Appointment</h3><p class="small mb-0">Choose your doctor and visit type.</p></div></div>
-          <div class="cc-journey-step"><div class="cc-journey-num">2</div><div><h3 class="h6 mb-1">Meet Cardiologist</h3><p class="small mb-0">Discuss history and symptoms calmly.</p></div></div>
-          <div class="cc-journey-step"><div class="cc-journey-num">3</div><div><h3 class="h6 mb-1">Complete Tests</h3><p class="small mb-0">Undergo advised ECG or ultrasound.</p></div></div>
-          <div class="cc-journey-step"><div class="cc-journey-num">4</div><div><h3 class="h6 mb-1">Review Results</h3><p class="small mb-0">Go through findings with your clinician.</p></div></div>
-          <div class="cc-journey-step"><div class="cc-journey-num">5</div><div><h3 class="h6 mb-1">Follow-up Care</h3><p class="small mb-0">Maintain ongoing wellness checkups.</p></div></div>
+          <div class="cc-journey-step">
+            <div class="cc-journey-num">1</div>
+            <div>
+              <h3 class="h6 mb-1">Priority Check-In</h3>
+              <p class="small mb-0">Warm greeting at reception, vital signs calibration, and zero crowded waiting.</p>
+            </div>
+          </div>
+          <div class="cc-journey-step">
+            <div class="cc-journey-num">2</div>
+            <div>
+              <h3 class="h6 mb-1">One-on-One Consultation</h3>
+              <p class="small mb-0">Unhurried conversation covering your symptoms, medical history, and questions.</p>
+            </div>
+          </div>
+          <div class="cc-journey-step">
+            <div class="cc-journey-num">3</div>
+            <div>
+              <h3 class="h6 mb-1">On-Site Diagnostics</h3>
+              <p class="small mb-0">Same-day resting ECG or ultrasound diagnostics completed in our private bay.</p>
+            </div>
+          </div>
+          <div class="cc-journey-step">
+            <div class="cc-journey-num">4</div>
+            <div>
+              <h3 class="h6 mb-1">Clear Plan &amp; Portal Upload</h3>
+              <p class="small mb-0">Detailed explanation by your doctor and action plan available on your portal.</p>
+            </div>
+          </div>
         </div>
 
         <div class="cc-section-header mb-4" data-aos="fade-up">
@@ -397,14 +642,22 @@
     <div class="cc-container">
       <div class="row g-4">
         <div class="col-lg-4">
-          <a href="home-2.html" class="d-inline-flex align-items-center gap-2 mb-3 text-white">
-            <svg width="36" height="36" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <a href="home-2.html" class="d-inline-flex align-items-center gap-2 mb-3 text-white text-decoration-none">
+            <svg width="38" height="38" viewBox="0 0 64 64" fill="none" aria-hidden="true">
               <rect width="64" height="64" rx="16" fill="#7B263A"/>
               <path d="M12 34H21L25.5 22L31.5 44L36.5 28L40 34H52" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-            <span class="fw-bold fs-5 text-white">CardioCare</span>
+            <span class="d-flex flex-column lh-1">
+              <span class="fw-bold fs-5 text-white">CardioCare</span>
+              <span class="small fw-semibold mt-1" style="color: #48C4C9; font-size: 0.74rem; letter-spacing: 0.03em;">Your Heart. Our Priority.</span>
+            </span>
           </a>
-          <p>Your Heart. Our Priority. Patient-centered cardiology consultations, diagnostic support, and preventive care.</p>
+          <p class="mb-3">Patient-centered heart care clinic, outpatient consultations, diagnostic support, and preventive care.</p>
+          <div class="d-flex gap-2">
+            <a href="index.html#contact-us" class="cc-social-btn" aria-label="Clinic LinkedIn (Demo)"><i data-lucide="linkedin" style="width:17px;height:17px;"></i></a>
+            <a href="index.html#contact-us" class="cc-social-btn" aria-label="Clinic Facebook (Demo)"><i data-lucide="facebook" style="width:17px;height:17px;"></i></a>
+            <a href="index.html#contact-us" class="cc-social-btn" aria-label="Clinic Instagram (Demo)"><i data-lucide="instagram" style="width:17px;height:17px;"></i></a>
+          </div>
         </div>
         <div class="col-6 col-lg-2">
           <h6>Pages</h6>
@@ -424,11 +677,28 @@
           </ul>
         </div>
         <div class="col-lg-3">
-          <h6>Contact (Demo)</h6>
+          <h6>Contact &amp; Hours (Demo)</h6>
           <ul class="cc-footer-links">
-            <li>420 Clinical Wellness Blvd, Suite 310</li>
-            <li>+1 (555) 014-8920</li>
-            <li>Mon – Sat: 8:00 AM – 6:30 PM</li>
+            <li class="cc-footer-contact-item">
+              <i data-lucide="map-pin"></i>
+              <span>420 Clinical Wellness Blvd, Suite 310</span>
+            </li>
+            <li class="cc-footer-contact-item">
+              <i data-lucide="phone"></i>
+              <span>Phone: +1 (555) 014-8920</span>
+            </li>
+            <li class="cc-footer-contact-item">
+              <i data-lucide="mail"></i>
+              <span>Email: care.demo@cardiocare.example</span>
+            </li>
+            <li class="cc-footer-contact-item">
+              <i data-lucide="clock"></i>
+              <span>Mon – Sat: 8:00 AM – 6:30 PM</span>
+            </li>
+            <li class="cc-footer-contact-item">
+              <i data-lucide="stethoscope"></i>
+              <a href="doctors.html">Browse Heart Specialists</a>
+            </li>
           </ul>
         </div>
       </div>

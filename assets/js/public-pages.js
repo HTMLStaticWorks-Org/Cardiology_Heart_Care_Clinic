@@ -135,9 +135,12 @@
             <i data-lucide="quote" style="color: var(--cc-teal); width: 22px; height: 22px;"></i>
           </div>
           <p class="flex-grow-1 fs-6">"${CC.escapeHtml(t.quote)}"</p>
-          <div class="pt-3 border-top" style="border-color: var(--cc-border) !important;">
-            <div class="fw-bold small">${CC.escapeHtml(t.author)}</div>
-            <div class="small" style="color: var(--cc-text-muted);">${CC.escapeHtml(t.visitType)}</div>
+          <div class="d-flex align-items-center gap-3 pt-3 border-top" style="border-color: var(--cc-border) !important;">
+            <img src="${t.avatar || 'assets/data/sample-ecg-preview.svg'}" alt="${CC.escapeHtml(t.author)}" class="rounded-circle" style="width: 46px; height: 46px; object-fit: cover; flex-shrink: 0; border: 2px solid var(--cc-teal); box-shadow: 0 2px 8px rgba(22,140,145,0.18);">
+            <div>
+              <div class="fw-bold small">${CC.escapeHtml(t.author)}</div>
+              <div class="small" style="color: var(--cc-text-muted);">${CC.escapeHtml(t.visitType)}</div>
+            </div>
           </div>
         </article>
       </div>

@@ -395,6 +395,31 @@
     });
   }
 
+  /* Back To Top Floating Button Handler */
+  function initBackToTop() {
+    let btn = document.getElementById('ccBackToTop');
+    if (!btn) {
+      btn = document.createElement('button');
+      btn.id = 'ccBackToTop';
+      btn.className = 'cc-back-to-top';
+      btn.type = 'button';
+      btn.setAttribute('aria-label', 'Back to top');
+      btn.innerHTML = '<i data-lucide="arrow-up" style="width:20px;height:20px;"></i>';
+      document.body.appendChild(btn);
+      refreshIcons();
+    }
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 280) {
+        btn.classList.add('show');
+      } else {
+        btn.classList.remove('show');
+      }
+    }, { passive: true });
+    btn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
   /* Global Init */
   function initCore() {
     const savedTheme = readPref(STORAGE_KEYS.THEME, 'light');
@@ -425,6 +450,7 @@
     loadClinicConfigAjax();
     initHeroThreeCanvas();
     initAnimations();
+    initBackToTop();
     installImageFallbacks();
     refreshIcons();
   }

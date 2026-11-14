@@ -39,7 +39,7 @@ window.CARDIOCARE_DEMO = {
       shortDesc: "Non-invasive ultrasound imaging to assess heart chambers, valve motion, and overall pumping function.",
       purpose: "Visualize heart structures and blood flow patterns safely using ultrasound waves without radiation.",
       preparation: "No fasting is required for a standard transthoracic echocardiogram; wear comfortable clothing.",
-      image: "https://images.pexels.com/photos/7089420/pexels-photo-7089420.jpeg?auto=compress&cs=tinysrgb&w=900",
+      image: "https://images.pexels.com/photos/7108399/pexels-photo-7108399.jpeg?auto=compress&cs=tinysrgb&w=900",
       alt: "Clinician performing a cardiac ultrasound examination in a modern clinic room"
     },
     {
@@ -107,7 +107,7 @@ window.CARDIOCARE_DEMO = {
       bio: "Focused on comprehensive adult heart health evaluations, hypertension management, and clear patient communication.",
       interests: ["Adult Clinical Cardiology", "Hypertension Care", "Long-Term Follow-up Planning"],
       slots: ["Mon 09:30 AM (Demo)", "Wed 11:00 AM (Demo)", "Fri 02:15 PM (Demo)"],
-      photo: "https://images.pexels.com/photos/12506554/pexels-photo-12506554.jpeg?auto=compress&cs=tinysrgb&w=800",
+      photo: "https://images.pexels.com/photos/4173251/pexels-photo-4173251.jpeg?auto=compress&cs=tinysrgb&w=800",
       alt: "Portrait of Senior Consultant Cardiologist in white medical coat with stethoscope"
     },
     {
@@ -137,7 +137,7 @@ window.CARDIOCARE_DEMO = {
       bio: "Dedicated to calm, methodical evaluation of palpitations, ECG findings, and longitudinal clinical care.",
       interests: ["12-Lead ECG Review", "Palpitation Evaluation", "Patient Heart Education"],
       slots: ["Mon 10:30 AM (Demo)", "Tue 03:30 PM (Demo)", "Thu 09:15 AM (Demo)"],
-      photo: "https://images.pexels.com/photos/19363028/pexels-photo-19363028.jpeg?auto=compress&cs=tinysrgb&w=800",
+      photo: "https://images.pexels.com/photos/5327656/pexels-photo-5327656.jpeg?auto=compress&cs=tinysrgb&w=800",
       alt: "Portrait of Clinical Cardiologist wearing a white coat and stethoscope"
     },
     {
@@ -260,22 +260,26 @@ window.CARDIOCARE_DEMO = {
     {
       quote: "The consultation felt unhurried and clear. Every step of my ECG appointment was explained calmly before the test began.",
       author: "Sample Patient A. (Demo Testimonial)",
-      visitType: "Preventive Consultation (Demo)"
+      visitType: "Preventive Consultation (Demo)",
+      avatar: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=200"
     },
     {
       quote: "Having my follow-up appointment schedule and sample portal reminders organized in one calm interface makes staying consistent effortless.",
       author: "Sample Patient M. (Demo Testimonial)",
-      visitType: "Follow-up Visit (Demo)"
+      visitType: "Follow-up Visit (Demo)",
+      avatar: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=200"
     },
     {
       quote: "From reception check-in to reviewing my echocardiography overview with the specialist, the atmosphere felt reassuring and respectful.",
       author: "Sample Patient R. (Demo Testimonial)",
-      visitType: "Diagnostic Consultation (Demo)"
+      visitType: "Diagnostic Consultation (Demo)",
+      avatar: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=200"
     },
     {
       quote: "I appreciated how clearly the doctor explained blood pressure trends in everyday language without rushing through questions.",
       author: "Sample Patient S. (Demo Testimonial)",
-      visitType: "Blood Pressure Review (Demo)"
+      visitType: "Blood Pressure Review (Demo)",
+      avatar: "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=200"
     }
   ],
 
