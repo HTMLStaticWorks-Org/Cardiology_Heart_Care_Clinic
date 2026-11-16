@@ -26,12 +26,14 @@
 }
 
 .cc-dash-sidebar-header {
-  min-height: 74px;
-  padding: 16px 20px;
+  height: 70px;
+  min-height: 70px;
+  padding: 14px 20px;
   border-bottom: 1px solid var(--cc-border);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  box-sizing: border-box;
 }
 
 .cc-dash-nav {
@@ -96,18 +98,21 @@
   flex: 1;
   min-width: 0;
   margin-inline-start: var(--cc-sidebar-width);
+  padding-top: 70px;
   display: flex;
   flex-direction: column;
   transition: margin var(--cc-transition);
 }
 
-/* Topbar - Stable fixed height across all viewports */
+/* Topbar - Fixed across all viewports */
 .cc-dash-topbar {
-  position: sticky;
+  position: fixed;
   top: 0;
+  inset-inline-start: var(--cc-sidebar-width);
+  inset-inline-end: 0;
   z-index: 1030;
-  height: 68px;
-  min-height: 68px;
+  height: 70px;
+  min-height: 70px;
   background-color: var(--cc-bg-surface);
   border-bottom: 1px solid var(--cc-border);
   padding: 0 clamp(14px, 2.5vw, 28px);
@@ -116,6 +121,13 @@
   justify-content: space-between;
   gap: 12px;
   flex-wrap: nowrap;
+  box-sizing: border-box;
+  transition: inset-inline-start var(--cc-transition), background-color var(--cc-transition);
+}
+
+[dir="rtl"] .cc-dash-topbar {
+  inset-inline-start: var(--cc-sidebar-width);
+  inset-inline-end: 0;
 }
 
 .cc-dash-drawer-toggle {
@@ -143,8 +155,15 @@
   .cc-dash-backdrop.open {
     display: block;
   }
+  .cc-dash-topbar {
+    inset-inline-start: 0 !important;
+    inset-inline-end: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+  }
   .cc-dash-main {
     margin-inline-start: 0;
+    padding-top: 70px;
   }
   .cc-dash-drawer-toggle {
     display: inline-flex;
@@ -357,6 +376,9 @@
 }
 
 @media (max-width: 575.98px) {
+  .cc-dash-main {
+    padding-top: 60px;
+  }
   .cc-dash-topbar {
     height: 60px;
     min-height: 60px;
