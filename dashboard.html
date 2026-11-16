@@ -78,8 +78,8 @@
             <i data-lucide="menu"></i>
           </button>
           <div class="d-flex align-items-center gap-1">
-            <span class="badge rounded-pill" style="background: var(--cc-bg-subtle); color: var(--cc-text-primary); border: 1px solid var(--cc-border); font-size: 0.78rem; padding: 6px 12px; font-weight: 600;">
-              Patient: <span data-dash-patient-id>CC-DEMO-2048</span>
+            <span class="badge rounded-pill cc-dash-topbar-badge">
+              <span class="d-none d-sm-inline">Patient: </span><span data-dash-patient-id>CC-DEMO-2048</span>
             </span>
           </div>
         </div>
@@ -604,7 +604,7 @@
               <h1 class="h4 fw-bold mb-1" style="color: var(--cc-burgundy);">Portal Notifications (Demo)</h1>
               <p class="small mb-0" style="color: var(--cc-text-muted);">Simulated appointment confirmations, report notices, and clinic announcements.</p>
             </div>
-            <div class="d-flex gap-2">
+            <div class="d-flex flex-wrap gap-2 cc-notif-actions w-100 w-sm-auto mt-2 mt-sm-0">
               <button type="button" id="notifMarkAllBtn" class="btn-cc-outline btn-cc-sm">Mark All as Read</button>
               <button type="button" id="notifClearAllBtn" class="btn-cc-outline btn-cc-sm text-danger">Clear Demo Notifications</button>
             </div>

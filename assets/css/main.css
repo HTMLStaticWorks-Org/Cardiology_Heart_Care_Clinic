@@ -882,6 +882,56 @@ body:has(.cc-navbar) {
   stroke: #FFFFFF;
 }
 
+/* Proper Labeled Social Media Pill Buttons (Auth & Contact) */
+.cc-social-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background-color: var(--cc-bg-surface);
+  border: 1px solid var(--cc-border-strong);
+  color: var(--cc-text-primary);
+  font-size: 0.84rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--cc-transition);
+  box-shadow: var(--cc-shadow-xs);
+}
+
+.cc-social-pill:hover {
+  background-color: var(--cc-burgundy);
+  border-color: var(--cc-burgundy);
+  color: #FFFFFF !important;
+  transform: translateY(-2px);
+  box-shadow: var(--cc-shadow-sm);
+}
+
+.cc-social-pill:hover svg {
+  color: #FFFFFF !important;
+  stroke: #FFFFFF;
+}
+
+[data-theme="dark"] .cc-social-pill {
+  background-color: var(--cc-bg-subtle);
+  border-color: var(--cc-border-strong);
+  color: var(--cc-text-primary);
+}
+
+[data-theme="dark"] .cc-auth-social-label {
+  color: #C8D8E4 !important;
+}
+
+/* High Contrast Close Button in Dark Mode */
+[data-theme="dark"] .btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
+  opacity: 0.85;
+}
+
+[data-theme="dark"] .btn-close:hover {
+  opacity: 1;
+}
+
 .cc-footer .cc-social-btn {
   background-color: rgba(255, 255, 255, 0.12);
   color: #FFFFFF !important;

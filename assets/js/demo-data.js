@@ -167,7 +167,7 @@ window.CARDIOCARE_DEMO = {
       bio: "Partners with patients on cholesterol literacy, blood pressure habits, and sustainable cardiovascular wellness plans.",
       interests: ["Lipid & Metabolic Health", "Preventive Screening", "Lifestyle Heart Coaching"],
       slots: ["Tue 01:30 PM (Demo)", "Wed 04:00 PM (Demo)", "Sat 02:00 PM (Demo)"],
-      photo: "https://images.pexels.com/photos/6238120/pexels-photo-6238120.jpeg?auto=compress&cs=tinysrgb&w=800",
+      photo: "https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=800",
       alt: "Portrait of Preventive Cardiology Consultant wearing white coat"
     }
   ],

@@ -346,17 +346,70 @@
   }
 }
 
+.cc-dash-topbar-badge {
+  background: var(--cc-bg-subtle);
+  color: var(--cc-text-primary);
+  border: 1px solid var(--cc-border);
+  font-size: 0.78rem;
+  padding: 6px 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
 @media (max-width: 575.98px) {
   .cc-dash-topbar {
-    gap: 8px;
-    padding-inline: 12px;
+    height: 60px;
     min-height: 60px;
+    gap: 6px;
+    padding-inline: 10px;
+    overflow-x: clip;
+  }
+  .cc-dash-topbar .gap-2 {
+    gap: 5px !important;
+  }
+  .cc-dash-topbar-badge {
+    font-size: 0.72rem;
+    padding: 4px 7px;
   }
   .cc-dash-topbar .cc-icon-toggle {
-    height: 36px;
-    min-width: 36px;
-    padding-inline: 8px;
+    height: 34px;
+    width: 34px;
+    min-width: 34px;
+    padding: 0;
+  }
+  .cc-dash-topbar .cc-icon-toggle svg {
+    width: 16px;
+    height: 16px;
+  }
+  .cc-user-chip {
+    padding: 2px;
+    gap: 0;
+  }
+  .cc-user-avatar {
+    width: 30px;
+    height: 30px;
     font-size: 0.72rem;
   }
+  .cc-notif-actions {
+    width: 100% !important;
+    display: flex;
+    flex-direction: column;
+    gap: 8px !important;
+  }
+  .cc-notif-actions button {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+/* Sidebar Close Button High-Contrast Dark Mode */
+[data-theme="dark"] #ccDashCloseDrawerBtn {
+  filter: invert(1) grayscale(100%) brightness(200%);
+  opacity: 0.9;
+}
+
+[data-theme="dark"] #ccDashCloseDrawerBtn:hover {
+  opacity: 1;
 }
 

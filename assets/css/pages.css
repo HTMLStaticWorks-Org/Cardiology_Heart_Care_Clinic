@@ -412,27 +412,31 @@
    Auth Pages (Centered Single Card - No Image Sidebar)
    ========================================================================== */
 .cc-auth-page {
+  position: relative;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: clamp(24px, 4vw, 48px) 16px;
+  padding: clamp(64px, 8vw, 84px) 16px clamp(24px, 4vw, 48px);
   background-color: var(--cc-bg-page);
 }
 
 .cc-auth-topbar {
-  width: 100%;
-  max-width: 520px;
+  position: absolute;
+  top: clamp(16px, 2.5vw, 28px);
+  inset-inline-end: clamp(16px, 3vw, 36px);
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-bottom: 16px;
   gap: 10px;
+  z-index: 20;
 }
 
 .cc-auth-topbar.register-topbar {
-  max-width: 640px;
+  position: absolute;
+  top: clamp(16px, 2.5vw, 28px);
+  inset-inline-end: clamp(16px, 3vw, 36px);
 }
 
 .cc-auth-card {
@@ -447,6 +451,37 @@
 
 .cc-auth-register-card {
   max-width: 640px;
+}
+
+/* High-Contrast Dark Theme Overrides for Auth Cards */
+[data-theme="dark"] .cc-auth-card {
+  background-color: var(--cc-bg-surface);
+  border-color: var(--cc-border);
+  color: var(--cc-text-primary);
+}
+
+[data-theme="dark"] .cc-auth-card h1,
+[data-theme="dark"] .cc-auth-card .h3 {
+  color: var(--cc-text-primary) !important;
+}
+
+[data-theme="dark"] .cc-auth-card p,
+[data-theme="dark"] .cc-auth-card .text-muted {
+  color: #B2C4D2 !important;
+}
+
+[data-theme="dark"] .cc-auth-card .text-secondary {
+  color: #C8D8E4 !important;
+}
+
+[data-theme="dark"] .cc-auth-card label,
+[data-theme="dark"] .cc-auth-card .form-check-label {
+  color: #EDF3F7 !important;
+}
+
+[data-theme="dark"] .cc-auth-card .border-top {
+  border-color: var(--cc-border) !important;
+  color: #C2D0DA;
 }
 
 @media (max-width: 991.98px) {
