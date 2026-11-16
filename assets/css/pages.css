@@ -279,6 +279,28 @@
   opacity: 0.88;
 }
 
+/* Light Variant Sub-Hero (About & Contact) */
+.cc-page-hero-light {
+  background: linear-gradient(135deg, rgba(123, 38, 58, 0.05), rgba(22, 140, 145, 0.07)) !important;
+  color: var(--cc-text-primary) !important;
+}
+
+[data-theme="dark"] .cc-page-hero-light {
+  background: linear-gradient(135deg, rgba(168, 59, 84, 0.14), rgba(36, 169, 175, 0.14)) !important;
+}
+
+.cc-page-hero-light h1,
+.cc-page-hero-light .cc-section-title,
+.cc-page-hero-light .display-5 {
+  color: var(--cc-text-primary) !important;
+}
+
+.cc-page-hero-light p,
+.cc-page-hero-light .lead {
+  color: var(--cc-text-secondary) !important;
+  opacity: 1 !important;
+}
+
 /* Services Page Detailed Alternating Layout */
 .cc-service-detail-card {
   background-color: var(--cc-bg-surface);

@@ -101,19 +101,21 @@
   transition: margin var(--cc-transition);
 }
 
-/* Topbar */
+/* Topbar - Stable fixed height across all viewports */
 .cc-dash-topbar {
   position: sticky;
   top: 0;
   z-index: 1030;
-  min-height: 74px;
+  height: 68px;
+  min-height: 68px;
   background-color: var(--cc-bg-surface);
   border-bottom: 1px solid var(--cc-border);
-  padding: 12px clamp(16px, 3vw, 28px);
+  padding: 0 clamp(14px, 2.5vw, 28px);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+  flex-wrap: nowrap;
 }
 
 .cc-dash-drawer-toggle {

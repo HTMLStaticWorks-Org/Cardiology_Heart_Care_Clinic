@@ -52,20 +52,18 @@
           <div class="cc-nav-actions">
             <button type="button" class="cc-icon-toggle" data-cc-theme-toggle aria-label="Toggle Light/Dark theme">
               <i class="cc-theme-icon" data-lucide="moon"></i>
-              <span class="cc-theme-label">Dark</span>
             </button>
             <button type="button" class="cc-icon-toggle" data-cc-dir-toggle aria-label="Toggle RTL/LTR layout">
               <i data-lucide="languages"></i>
-              <span class="cc-dir-label">RTL</span>
+            </button>
+            <button type="button" class="btn-cc-primary btn-cc-sm" data-cc-book>
+              <i data-lucide="calendar-plus"></i>
+              <span data-i18n="nav_book">Book Appointment</span>
             </button>
             <a href="login.html" class="btn-cc-outline btn-cc-sm">
               <i data-lucide="user"></i>
               <span data-i18n="nav_login">Patient Login</span>
             </a>
-            <button type="button" class="btn-cc-primary btn-cc-sm" data-cc-book>
-              <i data-lucide="calendar-plus"></i>
-              <span data-i18n="nav_book">Book Appointment</span>
-            </button>
           </div>
         </nav>
 
@@ -95,26 +93,24 @@
           <li><a href="dashboard.html" class="cc-nav-link" data-i18n="nav_dashboard">Dashboard</a></li>
         </ul>
 
-        <div class="cc-mobile-controls">
-          <button type="button" class="cc-icon-toggle w-100" data-cc-theme-toggle>
+        <div class="d-flex gap-2 mb-3">
+          <button type="button" class="cc-icon-toggle flex-fill" data-cc-theme-toggle aria-label="Toggle theme">
             <i class="cc-theme-icon" data-lucide="moon"></i>
-            <span class="cc-theme-label">Dark</span>
           </button>
-          <button type="button" class="cc-icon-toggle w-100" data-cc-dir-toggle>
+          <button type="button" class="cc-icon-toggle flex-fill" data-cc-dir-toggle aria-label="Toggle RTL/LTR">
             <i data-lucide="languages"></i>
-            <span class="cc-dir-label">RTL</span>
           </button>
         </div>
 
         <div class="d-grid gap-2">
-          <a href="login.html" class="btn-cc-outline">
-            <i data-lucide="user"></i>
-            <span data-i18n="nav_login">Patient Login</span>
-          </a>
           <button type="button" class="btn-cc-primary" data-cc-book data-bs-dismiss="offcanvas">
             <i data-lucide="calendar-plus"></i>
             <span data-i18n="nav_book">Book Appointment</span>
           </button>
+          <a href="login.html" class="btn-cc-outline">
+            <i data-lucide="user"></i>
+            <span data-i18n="nav_login">Patient Login</span>
+          </a>
         </div>
       </div>
 
@@ -127,7 +123,7 @@
 
   <main>
     <!-- HERO SECTION -->
-    <section class="cc-page-hero" style="background: linear-gradient(135deg, rgba(123,38,58,0.06), rgba(22,140,145,0.06)); padding: clamp(48px, 6vw, 76px) 0;">
+    <section class="cc-page-hero cc-page-hero-light" style="padding: clamp(48px, 6vw, 76px) 0;">
       <div class="cc-container">
         <div class="text-center mx-auto" style="max-width: 720px;" data-aos="fade-up">
           <span class="cc-eyebrow cc-eyebrow-burgundy mb-2">GET IN TOUCH</span>
@@ -268,10 +264,42 @@
           </div>
 
           <div class="col-lg-5" data-aos="fade-left">
-            <!-- Facility Photo & Quick Links -->
-            <div class="mb-4 rounded-4 overflow-hidden border" style="border-color: var(--cc-border) !important;">
-              <img src="https://images.pexels.com/photos/6129207/pexels-photo-6129207.jpeg?auto=compress&cs=tinysrgb&w=800" alt="CardioCare clinic entrance and patient lounge" class="img-fluid" style="width: 100%; height: 260px; object-fit: cover;">
-              <div class="p-4" style="background-color: var(--cc-bg-surface);">
+            <!-- Interactive Clinic Location Map -->
+            <div class="mb-4 rounded-4 overflow-hidden border shadow-sm" style="border-color: var(--cc-border) !important; background-color: var(--cc-bg-surface);">
+              <div class="p-3 border-bottom d-flex align-items-center justify-content-between" style="border-color: var(--cc-border) !important;">
+                <div class="d-flex align-items-center gap-2">
+                  <i data-lucide="map-pin" style="color: var(--cc-teal); width: 18px; height: 18px;"></i>
+                  <span class="fw-bold small">Clinic Location &amp; Directions</span>
+                </div>
+                <span class="badge" style="background: var(--cc-teal-soft); color: var(--cc-teal); font-size: 0.72rem;">Medical District</span>
+              </div>
+              <div style="width: 100%; height: 240px; position: relative;">
+                <iframe
+                  title="CardioCare Clinic Location Map"
+                  src="https://maps.google.com/maps?q=420+Clinical+Wellness+Blvd+Medical+District&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                  style="border:0; width: 100%; height: 100%; display: block;"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+              </div>
+              <div class="p-3">
+                <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                  <div class="small text-muted">
+                    <i data-lucide="navigation" style="width: 14px; height: 14px; color: var(--cc-teal);" class="me-1"></i>
+                    420 Clinical Wellness Blvd, Suite 310
+                  </div>
+                  <a href="https://maps.google.com/?q=420+Clinical+Wellness+Blvd+Medical+District" target="_blank" rel="noopener noreferrer" class="btn-cc-outline btn-cc-sm">
+                    <span>Directions</span>
+                    <i data-lucide="external-link"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Visiting Information -->
+            <div class="mb-4 rounded-4 overflow-hidden border" style="border-color: var(--cc-border) !important; background-color: var(--cc-bg-surface);">
+              <div class="p-4">
                 <h3 class="h6 fw-bold mb-2">Visiting Our Clinic</h3>
                 <p class="small mb-3" style="color: var(--cc-text-secondary);">
                   Conveniently situated in the Medical District with dedicated patient parking and ramp-accessible reception.
@@ -292,9 +320,9 @@
               <h3 class="h6 fw-bold mb-2">Connect With CardioCare</h3>
               <p class="small mb-3" style="color: var(--cc-text-muted);">Stay updated with clinical education, heart health guidance, and clinic news.</p>
               <div class="d-flex justify-content-center gap-3">
-                <a href="contact.html" class="cc-social-btn" style="background: var(--cc-bg-subtle); color: var(--cc-text-primary);" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
-                <a href="contact.html" class="cc-social-btn" style="background: var(--cc-bg-subtle); color: var(--cc-text-primary);" aria-label="Facebook"><i data-lucide="facebook"></i></a>
-                <a href="contact.html" class="cc-social-btn" style="background: var(--cc-bg-subtle); color: var(--cc-text-primary);" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="cc-social-btn" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="cc-social-btn" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="cc-social-btn" aria-label="Instagram"><i data-lucide="instagram"></i></a>
               </div>
             </div>
           </div>

@@ -52,20 +52,18 @@
           <div class="cc-nav-actions">
             <button type="button" class="cc-icon-toggle" data-cc-theme-toggle aria-label="Toggle Light/Dark theme">
               <i class="cc-theme-icon" data-lucide="moon"></i>
-              <span class="cc-theme-label">Dark</span>
             </button>
             <button type="button" class="cc-icon-toggle" data-cc-dir-toggle aria-label="Toggle RTL/LTR layout">
               <i data-lucide="languages"></i>
-              <span class="cc-dir-label">RTL</span>
+            </button>
+            <button type="button" class="btn-cc-primary btn-cc-sm" data-cc-book>
+              <i data-lucide="calendar-plus"></i>
+              <span data-i18n="nav_book">Book Appointment</span>
             </button>
             <a href="login.html" class="btn-cc-outline btn-cc-sm">
               <i data-lucide="user"></i>
               <span data-i18n="nav_login">Patient Login</span>
             </a>
-            <button type="button" class="btn-cc-primary btn-cc-sm" data-cc-book>
-              <i data-lucide="calendar-plus"></i>
-              <span data-i18n="nav_book">Book Appointment</span>
-            </button>
           </div>
         </nav>
 
@@ -95,26 +93,24 @@
           <li><a href="dashboard.html" class="cc-nav-link" data-i18n="nav_dashboard">Dashboard</a></li>
         </ul>
 
-        <div class="cc-mobile-controls">
-          <button type="button" class="cc-icon-toggle w-100" data-cc-theme-toggle>
+        <div class="d-flex gap-2 mb-3">
+          <button type="button" class="cc-icon-toggle flex-fill" data-cc-theme-toggle aria-label="Toggle theme">
             <i class="cc-theme-icon" data-lucide="moon"></i>
-            <span class="cc-theme-label">Dark</span>
           </button>
-          <button type="button" class="cc-icon-toggle w-100" data-cc-dir-toggle>
+          <button type="button" class="cc-icon-toggle flex-fill" data-cc-dir-toggle aria-label="Toggle RTL/LTR">
             <i data-lucide="languages"></i>
-            <span class="cc-dir-label">RTL</span>
           </button>
         </div>
 
         <div class="d-grid gap-2">
-          <a href="login.html" class="btn-cc-outline">
-            <i data-lucide="user"></i>
-            <span data-i18n="nav_login">Patient Login</span>
-          </a>
           <button type="button" class="btn-cc-primary" data-cc-book data-bs-dismiss="offcanvas">
             <i data-lucide="calendar-plus"></i>
             <span data-i18n="nav_book">Book Appointment</span>
           </button>
+          <a href="login.html" class="btn-cc-outline">
+            <i data-lucide="user"></i>
+            <span data-i18n="nav_login">Patient Login</span>
+          </a>
         </div>
       </div>
 
@@ -127,7 +123,7 @@
 
   <main>
     <!-- HERO SECTION -->
-    <section class="cc-page-hero" style="background: linear-gradient(135deg, rgba(123,38,58,0.06), rgba(22,140,145,0.06)); padding: clamp(48px, 6vw, 84px) 0;">
+    <section class="cc-page-hero cc-page-hero-light" style="padding: clamp(48px, 6vw, 84px) 0;">
       <div class="cc-container">
         <div class="row align-items-center g-4 g-lg-5">
           <div class="col-lg-7" data-aos="fade-right">
@@ -261,7 +257,7 @@
       <div class="cc-container">
         <div class="row align-items-center g-4 g-lg-5">
           <div class="col-lg-6" data-aos="fade-right">
-            <img src="https://images.pexels.com/photos/5327656/pexels-photo-5327656.jpeg?auto=compress&cs=tinysrgb&w=800" alt="CardioCare clinic reception and consultation area" class="img-fluid rounded-4 shadow-sm" style="width: 100%; height: 400px; object-fit: cover; border: 1px solid var(--cc-border);">
+            <img src="https://images.pexels.com/photos/6129207/pexels-photo-6129207.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Cardiology specialist reviewing heart health consultation records" class="img-fluid rounded-4 shadow-sm" style="width: 100%; height: 400px; object-fit: cover; object-position: center top; border: 1px solid var(--cc-border);">
           </div>
           <div class="col-lg-6" data-aos="fade-left">
             <span class="cc-eyebrow cc-eyebrow-burgundy mb-2">OUR CLINICAL STORY</span>
@@ -341,7 +337,7 @@
 
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
             <div class="cc-service-card h-100 p-4 text-center">
-              <img src="https://images.pexels.com/photos/3845129/pexels-photo-3845129.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Dr. Marcus Sterling" class="rounded-circle mb-3 mx-auto shadow-sm" style="width: 110px; height: 110px; object-fit: cover; border: 3px solid var(--cc-burgundy);">
+              <img src="https://images.pexels.com/photos/6238120/pexels-photo-6238120.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Dr. Marcus Sterling" class="rounded-circle mb-3 mx-auto shadow-sm" style="width: 110px; height: 110px; object-fit: cover; border: 3px solid var(--cc-burgundy);">
               <h3 class="h5 fw-bold mb-1">Dr. Marcus Sterling (Demo)</h3>
               <div class="small fw-semibold text-primary-burgundy mb-2" style="color: var(--cc-burgundy);">Non-Invasive Diagnostic Specialist</div>
               <p class="small mb-3" style="color: var(--cc-text-muted);">MBBS, FESC · 16+ Years Specializing in Echocardiography &amp; Stress Testing.</p>

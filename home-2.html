@@ -53,20 +53,18 @@
           <div class="cc-nav-actions">
             <button type="button" class="cc-icon-toggle" data-cc-theme-toggle aria-label="Toggle Light/Dark theme">
               <i class="cc-theme-icon" data-lucide="moon"></i>
-              <span class="cc-theme-label">Dark</span>
             </button>
             <button type="button" class="cc-icon-toggle" data-cc-dir-toggle aria-label="Toggle RTL/LTR layout">
               <i data-lucide="languages"></i>
-              <span class="cc-dir-label">RTL</span>
+            </button>
+            <button type="button" class="btn-cc-primary btn-cc-sm" data-cc-book>
+              <i data-lucide="calendar-plus"></i>
+              <span data-i18n="nav_book">Book Appointment</span>
             </button>
             <a href="login.html" class="btn-cc-outline btn-cc-sm">
               <i data-lucide="user"></i>
               <span data-i18n="nav_login">Patient Login</span>
             </a>
-            <button type="button" class="btn-cc-primary btn-cc-sm" data-cc-book>
-              <i data-lucide="calendar-plus"></i>
-              <span data-i18n="nav_book">Book Appointment</span>
-            </button>
           </div>
         </nav>
 
@@ -96,26 +94,24 @@
           <li><a href="dashboard.html" class="cc-nav-link" data-i18n="nav_dashboard">Dashboard</a></li>
         </ul>
 
-        <div class="cc-mobile-controls">
-          <button type="button" class="cc-icon-toggle w-100" data-cc-theme-toggle>
+        <div class="d-flex gap-2 mb-3">
+          <button type="button" class="cc-icon-toggle flex-fill" data-cc-theme-toggle aria-label="Toggle theme">
             <i class="cc-theme-icon" data-lucide="moon"></i>
-            <span class="cc-theme-label">Dark</span>
           </button>
-          <button type="button" class="cc-icon-toggle w-100" data-cc-dir-toggle>
+          <button type="button" class="cc-icon-toggle flex-fill" data-cc-dir-toggle aria-label="Toggle RTL/LTR">
             <i data-lucide="languages"></i>
-            <span class="cc-dir-label">RTL</span>
           </button>
         </div>
 
         <div class="d-grid gap-2">
-          <a href="login.html" class="btn-cc-outline">
-            <i data-lucide="user"></i>
-            <span data-i18n="nav_login">Patient Login</span>
-          </a>
           <button type="button" class="btn-cc-primary" data-cc-book data-bs-dismiss="offcanvas">
             <i data-lucide="calendar-plus"></i>
             <span data-i18n="nav_book">Book Appointment</span>
           </button>
+          <a href="login.html" class="btn-cc-outline">
+            <i data-lucide="user"></i>
+            <span data-i18n="nav_login">Patient Login</span>
+          </a>
         </div>
       </div>
 
